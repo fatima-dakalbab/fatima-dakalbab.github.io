@@ -1,983 +1,683 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-	<title>Fatima Dakalbab</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-	<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-	<link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
-
-	<link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-	<link rel="stylesheet" href="css/animate.css">
-
-	<link rel="stylesheet" href="css/owl.carousel.min.css">
-	<link rel="stylesheet" href="css/owl.theme.default.min.css">
-	<link rel="stylesheet" href="css/magnific-popup.css">
-
-	<link rel="stylesheet" href="css/aos.css">
-
-	<link rel="stylesheet" href="css/ionicons.min.css">
-
-	<link rel="stylesheet" href="css/flaaaticon.css">
-	<link rel="stylesheet" href="css/icomoon.css">
-	<link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fatima Dakalbab — AI Researcher & Designer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #060810;
+    --surface: #0d0f1a;
+    --surface2: #111422;
+    --border: #1c1f32;
+    --accent: #00e5c4;
+    --accent2: #ff4d6d;
+    --accent3: #6c63ff;
+    --text: #eceeff;
+    --muted: #6b6e88;
+    --tag-bg: #141728;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:'DM Mono',monospace;font-size:14px;line-height:1.7;overflow-x:hidden}
+  body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");pointer-events:none;z-index:1;opacity:0.35}
+  .cursor{width:10px;height:10px;background:var(--accent);border-radius:50%;position:fixed;pointer-events:none;z-index:9999;transition:transform 0.1s ease;mix-blend-mode:screen}
+  .cursor-ring{width:34px;height:34px;border:1px solid var(--accent);border-radius:50%;position:fixed;pointer-events:none;z-index:9998;transition:all 0.15s ease;opacity:0.35}
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 56px;display:flex;justify-content:space-between;align-items:center;background:linear-gradient(to bottom,rgba(6,8,16,0.97) 0%,transparent 100%);backdrop-filter:blur(4px)}
+  .nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:17px;color:var(--accent);letter-spacing:1px}
+  .nav-links{display:flex;gap:32px;list-style:none}
+  .nav-links a{color:var(--muted);text-decoration:none;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;transition:color 0.2s}
+  .nav-links a:hover{color:var(--accent)}
+  #hero{min-height:100vh;display:grid;grid-template-columns:1.1fr 0.9fr;align-items:center;padding:120px 56px 80px;position:relative;overflow:hidden}
+  .hero-grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(0,229,196,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,196,0.03) 1px,transparent 1px);background-size:52px 52px;mask-image:radial-gradient(ellipse 90% 90% at 50% 50%,black 20%,transparent 100%)}
+  .orb{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none}
+  .orb-1{width:700px;height:700px;background:radial-gradient(circle,rgba(0,229,196,0.08) 0%,transparent 70%);top:-150px;right:-150px;animation:orb-pulse 9s ease-in-out infinite}
+  .orb-2{width:500px;height:500px;background:radial-gradient(circle,rgba(108,99,255,0.1) 0%,transparent 70%);bottom:-100px;left:-80px;animation:orb-pulse 11s ease-in-out infinite reverse}
+  .orb-3{width:300px;height:300px;background:radial-gradient(circle,rgba(255,77,109,0.08) 0%,transparent 70%);top:40%;left:40%;animation:orb-pulse 7s ease-in-out infinite 2s}
+  @keyframes orb-pulse{0%,100%{transform:scale(1) translate(0,0);opacity:0.7}50%{transform:scale(1.12) translate(20px,-20px);opacity:1}}
+  .hero-content{position:relative;z-index:2}
+  .hero-eyebrow{font-size:10px;letter-spacing:0.35em;text-transform:uppercase;color:var(--accent);margin-bottom:22px;display:flex;align-items:center;gap:14px}
+  .hero-eyebrow::before{content:'';width:36px;height:1px;background:var(--accent)}
+  .blink{display:inline-block;width:8px;height:8px;background:var(--accent2);border-radius:50%;animation:blink 1.5s ease-in-out infinite}
+  @keyframes blink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.3;transform:scale(0.6)}}
+  .hero-name{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(50px,6.5vw,92px);line-height:0.92;letter-spacing:-3px;margin-bottom:10px}
+  .hero-name .first{color:var(--text)}
+  .hero-name .last{display:block;color:transparent;-webkit-text-stroke:1.5px var(--accent);background:linear-gradient(90deg,var(--accent),var(--accent3));-webkit-background-clip:text;background-clip:text}
+  .hero-dual-role{display:flex;gap:12px;margin:22px 0 28px;flex-wrap:wrap}
+  .role-pill{padding:8px 16px;font-size:11px;letter-spacing:0.08em;border:1px solid;display:inline-flex;align-items:center;gap:8px}
+  .role-pill.research{border-color:rgba(0,229,196,0.4);color:var(--accent);background:rgba(0,229,196,0.06)}
+  .role-pill.design{border-color:rgba(255,77,109,0.4);color:var(--accent2);background:rgba(255,77,109,0.06)}
+  .hero-bio{color:var(--muted);font-size:13px;max-width:440px;line-height:1.9;margin-bottom:36px}
+  .hero-bio strong{color:var(--accent);font-weight:500}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+  .btn-primary{background:var(--accent);color:var(--bg);border:none;padding:13px 26px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;text-decoration:none;transition:all 0.2s;display:inline-block;clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,8px 100%,0 calc(100% - 8px))}
+  .btn-primary:hover{background:#00ffda;box-shadow:0 0 24px rgba(0,229,196,0.4);transform:translateY(-1px)}
+  .btn-outline{background:transparent;color:var(--text);border:1px solid var(--border);padding:13px 26px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;text-decoration:none;transition:all 0.2s;display:inline-block}
+  .btn-outline:hover{border-color:var(--accent);color:var(--accent)}
+  .hero-right{position:relative;z-index:2;display:flex;flex-direction:column;gap:16px;padding-left:48px}
+  .scholar-card{background:var(--surface);border:1px solid var(--border);padding:28px 30px;position:relative;overflow:hidden}
+  .scholar-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent3),var(--accent2))}
+  .scholar-header{display:flex;align-items:center;gap:14px;margin-bottom:24px}
+  .scholar-icon{width:38px;height:38px;background:linear-gradient(135deg,var(--accent),var(--accent3));display:flex;align-items:center;justify-content:center;font-size:18px;clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%)}
+  .scholar-label{font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted)}
+  .scholar-name{font-family:'Syne',sans-serif;font-size:14px;font-weight:700}
+  .scholar-metrics{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--border)}
+  .metric-cell{padding:16px 14px;text-align:center;border-right:1px solid var(--border)}
+  .metric-cell:last-child{border-right:none}
+  .metric-value{font-family:'Syne',sans-serif;font-size:30px;font-weight:800;line-height:1;color:var(--accent);display:block;margin-bottom:4px}
+  .metric-cell:nth-child(2) .metric-value{color:var(--accent2)}
+  .metric-cell:nth-child(3) .metric-value{color:var(--accent3)}
+  .metric-key{font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);display:block}
+  .scholar-chart{margin-top:16px;height:48px;display:flex;align-items:flex-end;gap:3px}
+  .bar{flex:1;background:rgba(0,229,196,0.15);border-top:1px solid var(--accent);position:relative;cursor:default}
+  .bar:hover{background:rgba(0,229,196,0.3)}
+  .scholar-chart-label{font-size:9px;color:var(--muted);text-align:right;margin-top:5px;letter-spacing:0.08em}
+  .stat-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .stat-mini{background:var(--surface);border:1px solid var(--border);padding:16px 18px;position:relative;overflow:hidden;transition:border-color 0.2s}
+  .stat-mini:hover{border-color:var(--accent3)}
+  .stat-mini::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--accent3);transform:scaleX(0);transform-origin:left;transition:transform 0.3s}
+  .stat-mini:hover::after{transform:scaleX(1)}
+  .stat-mini-num{font-family:'Syne',sans-serif;font-size:26px;font-weight:800;color:var(--accent3);line-height:1;display:block}
+  .stat-mini-label{font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);margin-top:4px;display:block}
+  .sw{padding:100px 56px;max-width:1300px;margin:0 auto}
+  .swf{padding:100px 56px;background:var(--surface)}
+  .swf>.inner{max-width:1300px;margin:0 auto}
+  .sh{display:flex;align-items:baseline;gap:16px;margin-bottom:56px}
+  .sn{font-size:10px;color:var(--accent);letter-spacing:0.25em}
+  .st{font-family:'Syne',sans-serif;font-weight:800;font-size:38px;letter-spacing:-1.5px;line-height:1}
+  .sl{flex:1;height:1px;background:var(--border);margin-left:16px}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px}
+  .about-text p{color:var(--muted);line-height:1.95;margin-bottom:18px;font-size:13.5px}
+  .about-text p strong{color:var(--accent);font-weight:500}
+  .about-text p em{color:var(--accent2);font-style:normal}
+  .timeline{position:relative;padding-left:24px}
+  .timeline::before{content:'';position:absolute;left:0;top:8px;bottom:8px;width:1px;background:linear-gradient(to bottom,var(--accent) 0%,var(--accent3) 60%,transparent 100%)}
+  .ti{position:relative;margin-bottom:32px;opacity:0;transform:translateX(-16px);transition:all 0.5s ease}
+  .ti.visible{opacity:1;transform:translateX(0)}
+  .ti::before{content:'';position:absolute;left:-28px;top:6px;width:7px;height:7px;border-radius:50%;background:var(--accent);border:2px solid var(--bg);box-shadow:0 0 8px var(--accent)}
+  .ty{font-size:10px;color:var(--accent);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:3px}
+  .tr{font-family:'Syne',sans-serif;font-weight:700;font-size:15px;margin-bottom:2px}
+  .to{font-size:11px;color:var(--muted);margin-bottom:6px}
+  .td{font-size:12px;color:var(--muted);line-height:1.7}
+  .pg{display:grid;grid-template-columns:repeat(2,1fr);gap:2px}
+  .pc{background:var(--surface);border:1px solid var(--border);padding:36px;position:relative;overflow:hidden;transition:all 0.3s ease}
+  .pc::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,229,196,0.04) 0%,transparent 60%);opacity:0;transition:opacity 0.3s}
+  .pc:hover{border-color:var(--accent)}
+  .pc:hover::after{opacity:1}
+  .pc:nth-child(3):hover{border-color:var(--accent2)}
+  .pc-tag{display:inline-block;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);background:rgba(0,229,196,0.08);border:1px solid rgba(0,229,196,0.2);padding:4px 10px;margin-bottom:18px}
+  .pc:nth-child(3) .pc-tag{color:var(--accent2);background:rgba(255,77,109,0.08);border-color:rgba(255,77,109,0.2)}
+  .pc:nth-child(2) .pc-tag{color:var(--accent3);background:rgba(108,99,255,0.08);border-color:rgba(108,99,255,0.2)}
+  .pc-title{font-family:'Syne',sans-serif;font-weight:700;font-size:21px;line-height:1.2;margin-bottom:14px;letter-spacing:-0.4px}
+  .pc-desc{color:var(--muted);font-size:12.5px;line-height:1.85;margin-bottom:22px}
+  .pc-desc strong{color:var(--accent);font-weight:500}
+  .pc-stack{display:flex;gap:7px;flex-wrap:wrap}
+  .st-tag{font-size:10px;color:var(--muted);background:var(--tag-bg);padding:3px 8px;border:1px solid var(--border);letter-spacing:0.04em}
+  .pc.feat{grid-column:span 2;display:grid;grid-template-columns:1fr 1fr;gap:36px}
+  .pc.featw{grid-column:span 2}
+  .pv{background:linear-gradient(135deg,#0d0f1a,#080a14);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;min-height:200px;overflow:hidden}
+  .pl{border:1px solid var(--border)}
+  .pub-item{padding:26px 30px;border-bottom:1px solid var(--border);display:grid;grid-template-columns:64px 1fr auto;gap:22px;align-items:start;transition:background 0.2s}
+  .pub-item:last-child{border-bottom:none}
+  .pub-item:hover{background:var(--surface)}
+  .pub-year{font-size:10px;color:var(--accent);letter-spacing:0.12em;padding-top:3px}
+  .pub-title{font-family:'Instrument Serif',serif;font-size:15px;line-height:1.5;margin-bottom:5px}
+  .pub-journal{font-size:11px;color:var(--muted)}
+  .pub-badge{font-size:9px;padding:3px 8px;border:1px solid var(--border);color:var(--muted);white-space:nowrap;align-self:center}
+  .pub-badge.j{border-color:rgba(0,229,196,0.4);color:var(--accent)}
+  .pub-badge.i{border-color:rgba(108,99,255,0.4);color:var(--accent3)}
+  .di-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-bottom:56px}
+  .di-text p{color:var(--muted);font-size:13.5px;line-height:1.9;margin-bottom:16px}
+  .di-text p strong{color:var(--accent2);font-weight:500}
+  .dt-pills{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+  .dt-pill{padding:5px 11px;font-size:10px;letter-spacing:0.1em;border:1px solid rgba(255,77,109,0.25);color:var(--accent2);background:rgba(255,77,109,0.06);transition:all 0.2s}
+  .dt-pill:hover{background:rgba(255,77,109,0.12)}
+  .dg{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:auto;gap:12px}
+  .di{background:var(--surface2);border:1px solid var(--border);overflow:hidden;transition:all 0.3s;position:relative}
+  .di:hover{border-color:var(--accent2);transform:scale(1.01)}
+  .di.tall{grid-row:span 2}
+  .di.wide{grid-column:span 2}
+  .dc{width:100%;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+  .di.tall .dc{aspect-ratio:3/4.5}
+  .di.wide .dc{aspect-ratio:8/3}
+  .dl{padding:10px 14px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+  .dln{font-size:11px;color:var(--text)}
+  .dlt{font-size:9px;color:var(--accent2);letter-spacing:0.1em;text-transform:uppercase}
+  .dp{width:100%;height:100%}
+  .sg{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .skgr{background:var(--surface);border:1px solid var(--border);padding:26px;transition:border-color 0.2s}
+  .skgr:hover{border-color:var(--accent3)}
+  .skgt{font-size:9px;letter-spacing:0.28em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)}
+  .skgr:nth-child(2n) .skgt{color:var(--accent3)}
+  .skgr:nth-child(3n) .skgt{color:var(--accent2)}
+  .ski{display:flex;gap:7px;flex-wrap:wrap}
+  .skc{font-size:10px;color:var(--text);background:var(--tag-bg);padding:4px 9px;border:1px solid var(--border);transition:all 0.2s}
+  .skc:hover{border-color:var(--accent);color:var(--accent)}
+  .cm{overflow:hidden;position:relative;padding:18px 0;margin-bottom:36px}
+  .cm::before,.cm::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2}
+  .cm::before{left:0;background:linear-gradient(to right,var(--bg),transparent)}
+  .cm::after{right:0;background:linear-gradient(to left,var(--bg),transparent)}
+  .ct{display:flex;gap:12px;animation:marquee 28s linear infinite;width:max-content}
+  @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  .ct:hover{animation-play-state:paused}
+  .cpill{background:var(--surface2);border:1px solid var(--border);padding:9px 16px;white-space:nowrap;font-size:10px;display:flex;align-items:center;gap:8px;transition:all 0.2s;cursor:default}
+  .cpill:hover{border-color:var(--accent);color:var(--accent)}
+  .cpill::before{content:'◆';font-size:5px;color:var(--accent)}
+  .cdg{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .cc{background:var(--surface);border:1px solid var(--border);padding:22px;transition:all 0.2s}
+  .cc:hover{border-color:var(--accent3);transform:translateY(-2px)}
+  .ci{font-size:9px;color:var(--accent);letter-spacing:0.18em;text-transform:uppercase;margin-bottom:7px}
+  .cn{font-family:'Syne',sans-serif;font-weight:700;font-size:13px;line-height:1.3;margin-bottom:7px}
+  .cd{font-size:10px;color:var(--muted)}
+  .cs{background:var(--surface);padding:100px 56px}
+  .ci2{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+  .ch{font-family:'Syne',sans-serif;font-weight:800;font-size:52px;letter-spacing:-2px;line-height:0.95;margin-bottom:18px}
+  .ch span{display:block;color:transparent;-webkit-text-stroke:1.5px var(--accent)}
+  .csub{color:var(--muted);font-size:13px;line-height:1.8;max-width:380px}
+  .clinks{display:flex;flex-direction:column;gap:10px}
+  .clink{display:flex;align-items:center;gap:14px;padding:14px 18px;border:1px solid var(--border);text-decoration:none;color:var(--text);transition:all 0.2s}
+  .clink:hover{border-color:var(--accent);color:var(--accent);transform:translateX(4px)}
+  .clink-i{width:18px;text-align:center;font-size:14px}
+  .clink-l{font-size:11px;letter-spacing:0.05em;flex:1}
+  .clink-a{color:var(--muted);font-size:11px}
+  footer{padding:28px 56px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border);font-size:10px;color:var(--muted);letter-spacing:0.1em}
+  .fu{opacity:0;transform:translateY(28px);transition:all 0.6s ease}
+  .fu.visible{opacity:1;transform:translateY(0)}
+  @media(max-width:960px){
+    #hero{grid-template-columns:1fr;padding:110px 24px 60px}
+    .hero-right{padding-left:0;margin-top:40px}
+    .about-grid,.di-grid,.ci2{grid-template-columns:1fr}
+    .pg{grid-template-columns:1fr}
+    .pc.feat,.pc.featw{grid-column:span 1;grid-template-columns:1fr}
+    .sg{grid-template-columns:1fr 1fr}
+    .cdg{grid-template-columns:1fr}
+    .dg{grid-template-columns:1fr 1fr}
+    .di.wide{grid-column:span 1}
+    .sw,.swf{padding:60px 24px}
+    nav{padding:14px 24px}
+    .nav-links{display:none}
+    .stat-row{grid-template-columns:1fr 1fr}
+  }
+</style>
 </head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
 
-<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+<nav>
+  <div class="nav-logo">FD</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#publications">Research</a></li>
+    <li><a href="#design">Design</a></li>
+    <li><a href="#certificates">Certs</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 
+<!-- HERO -->
+<div id="hero" style="max-width:none">
+  <div class="hero-grid-bg"></div>
+  <div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow"><span class="blink"></span> Available for collaborations · Sharjah, UAE</div>
+    <div class="hero-name"><span class="first">Fatima</span><span class="last">Dakalbab</span></div>
+    <div class="hero-dual-role">
+      <span class="role-pill research">⬡ AI Researcher & Engineer</span>
+      <span class="role-pill design">◈ Creative Designer</span>
+    </div>
+    <p class="hero-bio">M.Sc. Computer Science · University of Sharjah<br>
+      Research Assistant @ <strong>Aviation Center of Excellence</strong> & SSCCR<br>
+      Building intelligent systems — and making them beautiful.</p>
+    <div class="hero-actions">
+      <a href="#projects" class="btn-primary">Explore Work →</a>
+      <a href="#publications" class="btn-outline">15 Publications</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="scholar-card">
+      <div class="scholar-header">
+        <div class="scholar-icon">📊</div>
+        <div>
+          <div class="scholar-label">Google Scholar</div>
+          <div class="scholar-name">Fatima Dakalbab</div>
+        </div>
+      </div>
+      <div class="scholar-metrics">
+        <div class="metric-cell"><span class="metric-value" id="citeN">0</span><span class="metric-key">Citations</span></div>
+        <div class="metric-cell"><span class="metric-value">9</span><span class="metric-key">h-index</span></div>
+        <div class="metric-cell"><span class="metric-value">9</span><span class="metric-key">i10-index</span></div>
+      </div>
+      <div class="scholar-chart" id="citChart"></div>
+      <div class="scholar-chart-label">Citation growth 2019 → 2025 →</div>
+    </div>
+    <div class="stat-row">
+      <div class="stat-mini"><span class="stat-mini-num" id="pubN">0</span><span class="stat-mini-label">Publications</span></div>
+      <div class="stat-mini"><span class="stat-mini-num" id="confN">0</span><span class="stat-mini-label">Conferences</span></div>
+      <div class="stat-mini"><span class="stat-mini-num">3.76</span><span class="stat-mini-label">M.Sc. CGPA</span></div>
+      <div class="stat-mini"><span class="stat-mini-num">3.92</span><span class="stat-mini-label">B.Sc. CGPA</span></div>
+    </div>
+  </div>
+</div>
 
-	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
-		<div class="container">
-			<a class="navbar-brand" href="index.html"><span>F</span>atima</a>
-			<button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse"
-				data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="oi oi-menu"></span> Menu
-			</button>
+<!-- ABOUT -->
+<section id="about"><div class="sw">
+  <div class="sh"><span class="sn">01</span><h2 class="st">About</h2><div class="sl"></div></div>
+  <div class="about-grid">
+    <div class="about-text fu">
+      <p>I'm a <strong>computer scientist and researcher</strong> based in Sharjah, UAE — with deep expertise in AI, large language models, aviation analytics, and enterprise AI integration.</p>
+      <p>My work bridges <strong>rigorous academic research and real-world engineering</strong> — publishing in Frontiers, IEEE, and Springer while also deploying on-premise LLMs into ERP systems and building AI tools for aviation safety.</p>
+      <p>Currently at the <strong>Aviation Center of Excellence</strong>, University of Sharjah — collaborating with GCAA and airline partners on intelligent flight data systems and aviation AI tools.</p>
+      <p>Beyond research, I'm a <em>graphic designer and visual communicator</em> — I've created branding campaigns for Dubai Police, aviation brochures, roll-up banners, event posters, animated awareness videos, and dozens of academic research visuals across multiple organizations.</p>
+    </div>
+    <div class="timeline">
+      <div class="ti"><div class="ty">2024 — 2025</div><div class="tr">M.Sc. Computer Science</div><div class="to">University of Sharjah · 3.76 CGPA</div><div class="td">AI, ML, NLP & FinTech. Thesis on Multimodal Deep Learning for Forex Prediction using Attention Mechanisms.</div></div>
+      <div class="ti"><div class="ty">2013 — Present</div><div class="tr">Research Assistant</div><div class="to">Aviation Center of Excellence, UOS</div><div class="td">AI/LLM research for aviation, RPA automation, front-end dashboards, cybersecurity analysis, event branding & collateral design.</div></div>
+      <div class="ti"><div class="ty">2017 — 2023</div><div class="tr">Research Assistant</div><div class="to">OpenUAE R&D Group, UOS</div><div class="td">Multimodal deep learning for Forex, published on LLMs, blockchain security & AI in finance. Designed academic posters, slide decks & reports.</div></div>
+      <div class="ti"><div class="ty">2020 — 2021</div><div class="tr">Graphic Designer</div><div class="to">Dubai Police</div><div class="td">Branding, animated cybersecurity awareness videos, COVID-19 campaigns, social media & print collateral.</div></div>
+      <div class="ti"><div class="ty">2016 — 2020</div><div class="tr">B.Sc. IT & Multimedia</div><div class="to">University of Sharjah · 3.92 CGPA</div><div class="td">Database Systems, Web & Mobile Dev, Multimedia Technologies. Tutored Programming, Multimedia & DBMS courses.</div></div>
+    </div>
+  </div>
+</div></section>
 
-			<div class="collapse navbar-collapse" id="ftco-nav">
-				<ul class="navbar-nav nav ml-auto">
-					<li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
-					<li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
-					<li class="nav-item"><a href="#resume-section" class="nav-link"><span>Resume</span></a></li>
-					<li class="nav-item"><a href="#services-section" class="nav-link"><span>Projects</span></a></li>
-					<li class="nav-item"><a href="#projects-section" class="nav-link"><span>Drawings</span></a></li>
-					<li class="nav-item"><a href="#certificate-section" class="nav-link"><span>Certificates</span></a>
-					</li>
-					<li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
-				</ul>
-			</div>
-		</div>
-	</nav>
-	<section class="hero-wrap js-fullheight">
-		<div class="overlay"></div>
-		<div class="container">
-			<div class="row no-gutters slider-text js-fullheight justify-content-center align-items-center">
-				<div class="col-lg-8 col-md-6 ftco-animate d-flex align-items-center">
-					<div class="text text-center">
-						<span class="subheading">Hey! I am</span>
-						<h1>Fatima Dakalbab</h1>
-						<h2>I'm 
-							<span class="txt-rotate" data-period="2000"
-								data-rotate='[ "a Computer scientist.", "a Developer.", "an Artist.", "an Animator.", "a Graphic Designer" ]'></span>
-						</h2>
-					</div>
-				</div>
-			</div>
-		</div>
-		</div>
-		<div class="mouse">
-			<a href="#" class="mouse-icon">
-				<div class="mouse-wheel"><span class="ion-ios-arrow-round-down"></span></div>
-			</a>
-		</div>
-	</section>
+<!-- PROJECTS -->
+<div id="projects" class="swf"><div class="inner">
+  <div class="sh"><span class="sn">02</span><h2 class="st">Projects</h2><div class="sl"></div></div>
+  <div class="pg">
+    <div class="pc feat fu">
+      <div>
+        <div class="pc-tag">✈ Flagship · Aviation AI</div>
+        <div class="pc-title">FDR Anomaly Detection System</div>
+        <p class="pc-desc">AI system for detecting anomalies in Flight Data Recorder multivariate time-series. Reproducible pipeline with synthetic anomaly injection evaluating multiple unsupervised models on ~56,000 rows / ~100 flight parameters.</p>
+        <p class="pc-desc"><strong>Models:</strong> Isolation Forest, One-Class SVM, LOF, DBSCAN, GMM, Autoencoders. Custom metrics: Detection@k and FAR@k.</p>
+        <div class="pc-stack"><span class="st-tag">Python</span><span class="st-tag">Scikit-learn</span><span class="st-tag">Time-Series</span><span class="st-tag">Anomaly Detection</span><span class="st-tag">GCAA Collab</span></div>
+      </div>
+      <div class="pv"><canvas id="fdrCanvas" width="380" height="200"></canvas></div>
+    </div>
+    <div class="pc fu">
+      <div class="pc-tag">🤖 AI Engineering</div>
+      <div class="pc-title">LLM Integration into ERPNext</div>
+      <p class="pc-desc">Deployed GPT-Neo 125M (8-bit quantized) on-premise into ERPNext via custom Python backend with Frappe framework. Full chat interface, backend pipelines, on-premise deployment — enterprise AI without cloud dependency.</p>
+      <div class="pc-stack"><span class="st-tag">GPT-Neo 125M</span><span class="st-tag">8-bit Quant</span><span class="st-tag">Frappe/ERPNext</span><span class="st-tag">On-Premise AI</span></div>
+    </div>
+    <div class="pc fu">
+      <div class="pc-tag">📈 FinTech Research</div>
+      <div class="pc-title">Multimodal Forex Prediction Engine</div>
+      <p class="pc-desc">Forex price prediction combining multimodal text-driven models with cross-modal attention and technical indicators. Integrated Arabic NLP sentiment with market data. Published in <em>Intelligent Systems with Applications</em> 2025.</p>
+      <div class="pc-stack"><span class="st-tag">PyTorch</span><span class="st-tag">Attention</span><span class="st-tag">NLP</span><span class="st-tag">Arabic NLP</span><span class="st-tag">TensorFlow</span></div>
+    </div>
+    <div class="pc featw fu">
+      <div class="pc-tag">🛡 Aviation Safety Tool</div>
+      <div class="pc-title">AICBRN FDR Analyzer</div>
+      <p class="pc-desc">AI-powered CVR/FDR data analysis tool designed to reduce investigator workload and enhance aviation safety intelligence. Combines AI-driven pipelines with aviation domain expertise for post-incident investigations in partnership with GCAA.</p>
+      <div class="pc-stack"><span class="st-tag">CVR/FDR Analysis</span><span class="st-tag">Deep Learning</span><span class="st-tag">Aviation Safety</span><span class="st-tag">AI Pipelines</span><span class="st-tag">GCAA</span></div>
+    </div>
+  </div>
+</div></div>
 
-	<section class="ftco-about img ftco-section ftco-no-pt ftco-no-pb" id="about-section">
-		<div class="container">
-			<div class="row d-flex no-gutters">
-				<div class="col-md-6 col-lg-6 d-flex">
-					<div class="img-about img d-flex align-items-stretch">
-						<div class="overlay"></div>
-						<div class="img d-flex align-self-stretch align-items-center"
-							style="background-image:url(images/About.jpg);">
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-6 pl-md-5 py-5">
-					<div class="row justify-content-start pb-3">
-						<div class="col-md-12 heading-section ftco-animate">
-							<h1 class="big">About</h1>
-							<h2 class="mb-4">About Me</h2>
-							<ul class="about-info mt-4 px-md-0 px-2">
-								<li class="d-flex"><span>Name:</span> <span>Fatima Dakalbab</span></li>
-								<li class="d-flex"><span>Date of birth:</span> <span>December 12, 1998</span></li>
-								<li class="d-flex"><span>Address:</span> <span>Dubai UAE</span></li>
-								<li class="d-flex"><span>Zip code:</span> <span>92972</span></li>
-								<li class="d-flex"><span>Email:</span> <span>fatima.dakalbab@gmail.com</span></li>
-								<li class="d-flex"><span>Phone: </span> <span>+97152-8310013</span></li>
-							</ul>
-						</div>
-					</div>
-					<div class="counter-wrap ftco-animate d-flex mt-md-3">
-						<div class="text">
-							<p><a href="FatimaDakalbabResume.pdf" target="_blank"
-									class="btn btn-primary py-3 px-3">Download CV</a></p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+<!-- PUBLICATIONS -->
+<section id="publications"><div class="sw">
+  <div class="sh"><span class="sn">03</span><h2 class="st">Research</h2><div class="sl"></div></div>
+  <div class="pl fu">
+    <div class="pub-item"><div class="pub-year">2025</div><div><div class="pub-title">Advancing Forex Prediction through Multimodal Text-Driven Model and Attention Mechanisms</div><div class="pub-journal">Intelligent Systems with Applications, Vol. 26 · Elsevier</div></div><div class="pub-badge j">Journal</div></div>
+    <div class="pub-item"><div class="pub-year">2025</div><div><div class="pub-title">Future Aviation Jobs: The Role of Technology in Shaping Skills and Competencies</div><div class="pub-journal">Journal of Open Innovation: Technology, Market, and Complexity · Elsevier</div></div><div class="pub-badge j">Journal</div></div>
+    <div class="pub-item"><div class="pub-year">2025</div><div><div class="pub-title">ChatGPT for Coding: User Insights and Challenges in Program Generation</div><div class="pub-journal">IEEE IWCMC 2025 · 21st Int'l Wireless Communications & Mobile Computing Conference</div></div><div class="pub-badge i">IEEE</div></div>
+    <div class="pub-item"><div class="pub-year">2024</div><div><div class="pub-title">Exploring the Impact of ChatGPT: Conversational AI in Education</div><div class="pub-journal">Frontiers in Education, Vol. 9 · Frontiers Media SA</div></div><div class="pub-badge j">Journal</div></div>
+    <div class="pub-item"><div class="pub-year">2024</div><div><div class="pub-title">Algorithmic Trading in Forex Using Technical Indicators: A Review</div><div class="pub-journal">IEEE CINS 2024 · BITS Pilani Dubai Campus</div></div><div class="pub-badge i">IEEE</div></div>
+    <div class="pub-item"><div class="pub-year">2024</div><div><div class="pub-title">Artificial Intelligence Techniques in Financial Trading: A Systematic Literature Review</div><div class="pub-journal">Journal of King Saud University – Computer and Information Sciences</div></div><div class="pub-badge j">Journal</div></div>
+    <div class="pub-item"><div class="pub-year">2024</div><div><div class="pub-title">AI-Driven Approaches for Cultural Heritage: Analytical Study from Architectural Design Perspective</div><div class="pub-journal">ICoMTEC 2024 · ASTEEC · Yogyakarta — ⭐ Outstanding Contribution Award</div></div><div class="pub-badge i">Conf.</div></div>
+    <div class="pub-item"><div class="pub-year">2024</div><div><div class="pub-title">Software Defined Radio Based Airplane Blackbox Localization System</div><div class="pub-journal">IEEE CINS 2024</div></div><div class="pub-badge i">IEEE</div></div>
+    <div class="pub-item"><div class="pub-year">2023</div><div><div class="pub-title">Machine Learning-Based Trading Robot for Foreign Exchange (FOREX)</div><div class="pub-journal">ICR'23 · Springer Nature Switzerland</div></div><div class="pub-badge">Springer</div></div>
+    <div class="pub-item"><div class="pub-year">2022</div><div><div class="pub-title">Artificial Intelligence & Crime Prediction: A Systematic Literature Review</div><div class="pub-journal">Social Sciences & Humanities Open, Vol. 6 · Elsevier</div></div><div class="pub-badge j">Journal</div></div>
+    <div class="pub-item"><div class="pub-year">2022</div><div><div class="pub-title">Blockchain Network for Solar PV Electric Vehicles Charging Station</div><div class="pub-journal">ICBATS 2022 · IEEE</div></div><div class="pub-badge i">IEEE</div></div>
+    <div class="pub-item"><div class="pub-year">2022</div><div><div class="pub-title">Security in Robotic Operating System: Analytical Review</div><div class="pub-journal">ICDSIS 2022 · IET</div></div><div class="pub-badge i">Conf.</div></div>
+    <div class="pub-item"><div class="pub-year">2021</div><div><div class="pub-title">Machine Learning for Anomaly Detection: A Systematic Review</div><div class="pub-journal">IEEE Access, Vol. 9 · 78658–78700</div></div><div class="pub-badge i">IEEE</div></div>
+    <div class="pub-item"><div class="pub-year">2021</div><div><div class="pub-title">Machine Learning for Cloud Security: A Systematic Review</div><div class="pub-journal">IEEE Access, Vol. 9 · 20717–20735</div></div><div class="pub-badge i">IEEE</div></div>
+    <div class="pub-item"><div class="pub-year">2021</div><div><div class="pub-title">Interoperability Among Heterogeneous Blockchains: A Systematic Literature Review</div><div class="pub-journal">Trust Models for Next-Gen Blockchain Ecosystems · Springer</div></div><div class="pub-badge">Springer</div></div>
+  </div>
+  <div style="margin-top:20px;text-align:right">
+    <a href="https://scholar.google.com/citations?user=pImWe6kAAAAJ&hl=en" target="_blank" class="btn-outline" style="font-size:10px">View on Google Scholar →</a>
+  </div>
+</div></section>
 
-	<section class="ftco-section ftco-no-pb goto-here" id="resume-section">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-3">
-					<nav id="navi">
-						<ul>
-							<li><a href="#page-1">Education</a></li>
-							<li><a href="#page-2">Experience</a></li>
-							<li><a href="#page-3">Skills</a></li>
-							<li><a href="#page-4">Activities</a></li>
-						</ul>
-					</nav>
-				</div>
-				<div class="col-md-9">
-					<div id="page-1" class="page one">
-						<h2 class="heading">Education</h2>
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-graduated"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">2020-2023</span>
-								<h2>Master in Computer science</h2>
-								<span class="position">University of Sharjah</span>
-								<p>College of Computing and Informatics, Sharjah, UAE, CGPA: 3.76 </p>
-							</div>
-						</div>
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-graduated"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">2016-2020</span>
-								<h2>Bachelor in Information Technology Multimedia</h2>
-								<span class="position">University of Sharjah</span>
-								<p>College of Computing and Informatics, Sharjah, UAE, GPA: 3.92 </p>
-							</div>
-						</div>
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-graduated"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">2004-2016</span>
-								<h2>High School Certificate</h2>
-								<span class="position">Rashid Al Saleh Private School</span>
-								<p>Dubai, UAE, Average: 97% </p>
-							</div>
-						</div>
-					</div>
+<!-- DESIGN -->
+<div id="design" class="swf"><div class="inner">
+  <div class="sh"><span class="sn">04</span><h2 class="st">Design Work</h2><div class="sl"></div></div>
+  <div class="di-grid fu">
+    <div class="di-text">
+      <p>Beyond research, I'm a <strong>creative designer</strong> with years of experience crafting visual identities, academic brochures, event posters, animated videos, and digital campaigns.</p>
+      <p>I designed <strong>branding materials and campaigns</strong> for Dubai Police, created aviation research brochures and roll-up banners for ACoE, and developed academic posters and slide decks across dozens of research projects and conferences.</p>
+      <p>Design is how I communicate complex ideas with clarity — it's not separate from my engineering work, it <strong>amplifies</strong> it.</p>
+      <div class="dt-pills">
+        <span class="dt-pill">Photoshop</span><span class="dt-pill">Illustrator</span><span class="dt-pill">Premiere Pro</span>
+        <span class="dt-pill">After Effects</span><span class="dt-pill">Adobe XD</span><span class="dt-pill">Figma</span>
+        <span class="dt-pill">Canva</span><span class="dt-pill">Dreamweaver</span><span class="dt-pill">3Ds Max</span><span class="dt-pill">Unity</span>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+      <div style="background:var(--surface2);border:1px solid rgba(255,77,109,0.2);padding:22px;text-align:center">
+        <div style="font-family:'Syne',sans-serif;font-size:34px;font-weight:800;color:var(--accent2)">4+</div>
+        <div style="font-size:9px;color:var(--muted);letter-spacing:0.2em;text-transform:uppercase;margin-top:4px">Orgs Designed For</div>
+      </div>
+      <div style="background:var(--surface2);border:1px solid rgba(255,77,109,0.2);padding:22px;text-align:center">
+        <div style="font-family:'Syne',sans-serif;font-size:34px;font-weight:800;color:var(--accent2)">10+</div>
+        <div style="font-size:9px;color:var(--muted);letter-spacing:0.2em;text-transform:uppercase;margin-top:4px">Adobe Tools</div>
+      </div>
+      <div style="background:var(--surface2);border:1px solid rgba(255,77,109,0.2);padding:22px;text-align:center;grid-column:span 2">
+        <div style="font-family:'Syne',sans-serif;font-size:28px;font-weight:800;color:var(--accent2)">Brochures · Posters · Campaigns · Motion</div>
+        <div style="font-size:9px;color:var(--muted);letter-spacing:0.2em;text-transform:uppercase;margin-top:4px">Types of design work</div>
+      </div>
+    </div>
+  </div>
 
-					<div id="page-2" class="page two">
-						<h2 class="heading">Experience</h2>
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-mining"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">2017-Present</span>
-								<h2>Research Assistant</h2>
-								<span class="position">University of Sharjah</span>
-								<p>Conducting literature reviews, identifying research gaps, and reporting research findings </p>
-								<p>Writing progress reports, preparing presentations, designing conference posters, and publishing research papers.</p>
-								<p>Mentoring junior research assistants in their research duties</p>
-								<p>Participating and organizing project meetings, seminars, and external conferences</p>
-								<p>Attended workshops to gain more experience like “Mendeley: Reference Management
-									Software and Researcher Network”, introduction to “Blockchain, AI, Machine
-									Learning.”</p>
-							</div>
-						</div>
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-mining"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">2020-2021</span>
-								<h2>Graphic Designer</h2>
-								<span class="position">Dubai Police</span>
-								<p>Designed characters that represent police officers, as well as UAE local individuals</p>
-								<p>Worked with a team to design branding for an academic advising initiative, Wejhati. Choosing color schemes, designing logos, characters, posters, cards, and forms</p>
-								<p>Constructing animated videos on how to stay safe in COVID-19 situations and how to take the right precautions for cyber bullying</p>
-							</div>
-						</div>
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-mining"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">2019-2020</span>
-								<h2>Department Student Representative</h2>
-								<span class="position">University of Sharjah</span>
-								<p>Assisted the students in university and collected ideas and suggestion for
-									improvement. In addition to following up with the student’s comments and share them
-									in meetings with the dean. Moreover, creating fun events for the students</p>
-							</div>
-						</div>
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-mining"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">2017-2018</span>
-								<h2>CASTO Tutoring Students Program</h2>
-								<span class="position">University of Sharjah</span>
-								<p>Organizing teaching sessions, assisting the students in their studies, following up with their progress, and reporting to the assigned professor </p>
-							</div>
-						</div>
+  <div class="dg fu">
+    <!-- Brochure tall -->
+    <div class="di tall">
+      <div class="dc">
+        <svg class="dp" viewBox="0 0 220 290" xmlns="http://www.w3.org/2000/svg">
+          <rect width="220" height="290" fill="#0d0f1a"/>
+          <rect x="0" y="0" width="220" height="82" fill="#060810"/>
+          <rect x="0" y="80" width="220" height="2" fill="#00e5c4" opacity="0.8"/>
+          <circle cx="32" cy="41" r="22" fill="none" stroke="#00e5c4" stroke-width="1" opacity="0.6"/>
+          <circle cx="32" cy="41" r="13" fill="none" stroke="#00e5c4" stroke-width="0.5" opacity="0.3"/>
+          <path d="M58 38 L76 34 L81 37 L71 41 L81 45 L76 48 Z" fill="#00e5c4" opacity="0.9"/>
+          <text x="58" y="58" font-size="7.5" fill="#eceeff" font-family="monospace" font-weight="bold">AVIATION CENTER</text>
+          <text x="58" y="68" font-size="5.5" fill="#6b6e88" font-family="monospace" letter-spacing="2">OF EXCELLENCE</text>
+          <rect x="16" y="98" width="120" height="4" rx="2" fill="#1c1f32"/>
+          <rect x="16" y="108" width="90" height="3" rx="2" fill="#1c1f32"/>
+          <rect x="16" y="117" width="110" height="3" rx="2" fill="#1c1f32"/>
+          <rect x="16" y="136" width="188" height="72" fill="#141728" rx="2"/>
+          <line x1="72" y1="136" x2="72" y2="208" stroke="#1c1f32" stroke-width="0.5"/>
+          <line x1="128" y1="136" x2="128" y2="208" stroke="#1c1f32" stroke-width="0.5"/>
+          <line x1="184" y1="136" x2="184" y2="208" stroke="#1c1f32" stroke-width="0.5"/>
+          <line x1="16" y1="172" x2="204" y2="172" stroke="#1c1f32" stroke-width="0.5"/>
+          <path d="M88 153 L112 153 L128 172 L112 191 L88 191 L72 172 Z" fill="none" stroke="#6c63ff" stroke-width="1" opacity="0.5"/>
+          <circle cx="112" cy="172" r="10" fill="rgba(0,229,196,0.1)" stroke="#00e5c4" stroke-width="0.8" opacity="0.6"/>
+          <rect x="16" y="218" width="57" height="36" fill="#141728" rx="1"/>
+          <rect x="82" y="218" width="57" height="36" fill="#141728" rx="1"/>
+          <rect x="147" y="218" width="57" height="36" fill="#141728" rx="1"/>
+          <text x="28" y="234" font-size="12" fill="#00e5c4" font-family="monospace" font-weight="bold">15</text>
+          <text x="20" y="246" font-size="5" fill="#6b6e88" font-family="monospace">Research</text>
+          <text x="93" y="234" font-size="12" fill="#ff4d6d" font-family="monospace" font-weight="bold">843</text>
+          <text x="86" y="246" font-size="5" fill="#6b6e88" font-family="monospace">Citations</text>
+          <text x="163" y="234" font-size="12" fill="#6c63ff" font-family="monospace" font-weight="bold">9</text>
+          <text x="155" y="246" font-size="5" fill="#6b6e88" font-family="monospace">H-Index</text>
+          <rect x="0" y="274" width="220" height="16" fill="#00e5c4" opacity="0.1"/>
+          <text x="16" y="285" font-size="5.5" fill="#00e5c4" font-family="monospace">www.acoeuos.ae  ·  aviation@sharjah.ac.ae</text>
+        </svg>
+      </div>
+      <div class="dl"><span class="dln">Research Brochure</span><span class="dlt">Print · Aviation</span></div>
+    </div>
 
+    <!-- Event Poster -->
+    <div class="di">
+      <div class="dc">
+        <svg class="dp" viewBox="0 0 220 165" xmlns="http://www.w3.org/2000/svg">
+          <rect width="220" height="165" fill="#060810"/>
+          <defs>
+            <radialGradient id="rg1" cx="70%" cy="30%"><stop offset="0%" stop-color="#6c63ff" stop-opacity="0.3"/><stop offset="100%" stop-color="#060810" stop-opacity="0"/></radialGradient>
+            <radialGradient id="rg2" cx="20%" cy="80%"><stop offset="0%" stop-color="#ff4d6d" stop-opacity="0.2"/><stop offset="100%" stop-color="#060810" stop-opacity="0"/></radialGradient>
+          </defs>
+          <rect width="220" height="165" fill="url(#rg1)"/><rect width="220" height="165" fill="url(#rg2)"/>
+          <polygon points="178,8 210,38 178,68 146,38" fill="none" stroke="#6c63ff" stroke-width="1" opacity="0.5"/>
+          <polygon points="183,14 207,38 183,62 159,38" fill="none" stroke="#6c63ff" stroke-width="0.5" opacity="0.3"/>
+          <text x="16" y="28" font-size="6" fill="#ff4d6d" font-family="monospace" letter-spacing="3">CONFERENCE · 2024</text>
+          <text x="16" y="52" font-size="20" fill="#eceeff" font-family="sans-serif" font-weight="bold">CINS</text>
+          <text x="16" y="67" font-size="8.5" fill="#6c63ff" font-family="monospace">Computational Intelligence</text>
+          <text x="16" y="79" font-size="8.5" fill="#6c63ff" font-family="monospace">&amp; Network Systems</text>
+          <line x1="16" y1="89" x2="204" y2="89" stroke="#1c1f32" stroke-width="1"/>
+          <text x="16" y="104" font-size="5.5" fill="#6b6e88" font-family="monospace">SPEAKER</text>
+          <text x="16" y="116" font-size="8" fill="#eceeff" font-family="monospace">Fatima Dakalbab</text>
+          <text x="16" y="128" font-size="5.5" fill="#6b6e88" font-family="monospace">Algorithmic Trading in Forex</text>
+          <rect x="16" y="140" width="62" height="9" rx="1" fill="#6c63ff" opacity="0.8"/>
+          <text x="20" y="147" font-size="5.5" fill="#eceeff" font-family="monospace">Nov 28–29 · Dubai</text>
+          <circle cx="188" cy="140" r="16" fill="none" stroke="#6c63ff" stroke-width="1" opacity="0.4"/>
+          <text x="183" y="144" font-size="7" fill="#6c63ff" font-family="monospace">IEEE</text>
+        </svg>
+      </div>
+      <div class="dl"><span class="dln">Conference Poster</span><span class="dlt">Digital · IEEE CINS</span></div>
+    </div>
 
-					</div>
-					<div id="page-3" class="page three">
-						<h2 class="heading">Skills</h2>
-						<div class="row progress-circle mb-5">
-							<div class="col-lg-4 mb-4">
-								<div class="bg-white rounded-lg shadow p-4">
-									<h2 class="h5 font-weight-bold text-center mb-4">Photoshop</h2>
+    <!-- Cybersecurity Campaign -->
+    <div class="di">
+      <div class="dc">
+        <svg class="dp" viewBox="0 0 220 165" xmlns="http://www.w3.org/2000/svg">
+          <rect width="220" height="165" fill="#060810"/>
+          <defs><radialGradient id="cg" cx="50%" cy="50%"><stop offset="0%" stop-color="#00e5c4" stop-opacity="0.1"/><stop offset="100%" stop-color="#060810" stop-opacity="0"/></radialGradient></defs>
+          <rect width="220" height="165" fill="url(#cg)"/>
+          <path d="M110 14 L140 27 L140 64 C140 84 110 100 110 100 C110 100 80 84 80 64 L80 27 Z" fill="none" stroke="#00e5c4" stroke-width="1.5" opacity="0.7"/>
+          <path d="M110 21 L133 32 L133 62 C133 77 110 91 110 91 C110 91 87 77 87 62 L87 32 Z" fill="rgba(0,229,196,0.06)" stroke="#00e5c4" stroke-width="0.5" opacity="0.4"/>
+          <path d="M99 57 L107 65 L122 47" fill="none" stroke="#00e5c4" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
+          <line x1="20" y1="40" x2="68" y2="40" stroke="#1c1f32" stroke-width="1"/><circle cx="20" cy="40" r="2" fill="#00e5c4" opacity="0.4"/>
+          <line x1="152" y1="40" x2="200" y2="40" stroke="#1c1f32" stroke-width="1"/><circle cx="200" cy="40" r="2" fill="#00e5c4" opacity="0.4"/>
+          <text x="110" y="117" font-size="11" fill="#eceeff" font-family="sans-serif" font-weight="bold" text-anchor="middle">CYBERSECURITY</text>
+          <text x="110" y="131" font-size="6.5" fill="#00e5c4" font-family="monospace" text-anchor="middle" letter-spacing="3">AWARENESS</text>
+          <text x="110" y="152" font-size="6" fill="#6b6e88" font-family="monospace" text-anchor="middle">Dubai Police · 2020</text>
+        </svg>
+      </div>
+      <div class="dl"><span class="dln">Awareness Campaign</span><span class="dlt">Visual · Dubai Police</span></div>
+    </div>
 
-									<!-- Progress bar 1 -->
-									<div class="progress mx-auto" data-value='90'>
-										<span class="progress-left">
-											<span class="progress-bar border-primary"></span>
-										</span>
-										<span class="progress-right">
-											<span class="progress-bar border-primary"></span>
-										</span>
-										<div
-											class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-											<div class="h2 font-weight-bold">90<sup class="small">%</sup></div>
-										</div>
-									</div>
-									<!-- END -->
+    <!-- Academic Poster Wide -->
+    <div class="di wide">
+      <div class="dc">
+        <svg class="dp" viewBox="0 0 440 165" xmlns="http://www.w3.org/2000/svg">
+          <rect width="440" height="165" fill="#0d0f1a"/>
+          <rect x="0" y="0" width="440" height="36" fill="#060810"/>
+          <rect x="0" y="34" width="440" height="2" fill="#ff4d6d" opacity="0.8"/>
+          <polygon points="24,8 36,8 42,18 36,28 24,28 18,18" fill="none" stroke="#eceeff" stroke-width="1" opacity="0.7"/>
+          <text x="50" y="17" font-size="7" fill="#eceeff" font-family="monospace" font-weight="bold">UNIVERSITY OF SHARJAH</text>
+          <text x="50" y="28" font-size="5.5" fill="#6b6e88" font-family="monospace">College of Computing &amp; Informatics</text>
+          <text x="350" y="16" font-size="6" fill="#ff4d6d" font-family="monospace" text-anchor="middle">RESEARCH POSTER</text>
+          <text x="350" y="27" font-size="5" fill="#6b6e88" font-family="monospace" text-anchor="middle">IIF-2025 · April 9–10</text>
+          <text x="16" y="54" font-size="7" fill="#ff4d6d" font-family="monospace" font-weight="bold">ABSTRACT</text>
+          <rect x="16" y="59" width="115" height="3" rx="1" fill="#1c1f32"/>
+          <rect x="16" y="66" width="100" height="3" rx="1" fill="#1c1f32"/>
+          <rect x="16" y="73" width="110" height="3" rx="1" fill="#1c1f32"/>
+          <rect x="16" y="80" width="90" height="3" rx="1" fill="#1c1f32"/>
+          <text x="16" y="100" font-size="7" fill="#ff4d6d" font-family="monospace" font-weight="bold">METHODOLOGY</text>
+          <rect x="16" y="105" width="105" height="3" rx="1" fill="#1c1f32"/>
+          <rect x="16" y="112" width="85" height="3" rx="1" fill="#1c1f32"/>
+          <rect x="16" y="119" width="110" height="3" rx="1" fill="#1c1f32"/>
+          <text x="155" y="54" font-size="7" fill="#ff4d6d" font-family="monospace" font-weight="bold">RESULTS</text>
+          <rect x="155" y="100" width="16" height="55" fill="rgba(0,229,196,0.25)"/>
+          <rect x="155" y="80" width="16" height="75" fill="rgba(0,229,196,0.45)"/>
+          <rect x="178" y="90" width="16" height="65" fill="rgba(108,99,255,0.35)"/>
+          <rect x="178" y="70" width="16" height="85" fill="rgba(108,99,255,0.55)"/>
+          <rect x="201" y="95" width="16" height="60" fill="rgba(255,77,109,0.3)"/>
+          <rect x="201" y="75" width="16" height="80" fill="rgba(255,77,109,0.5)"/>
+          <rect x="224" y="85" width="16" height="70" fill="rgba(0,229,196,0.35)"/>
+          <rect x="224" y="60" width="16" height="95" fill="rgba(0,229,196,0.55)"/>
+          <line x1="155" y1="155" x2="250" y2="155" stroke="#1c1f32" stroke-width="1"/>
+          <text x="158" y="163" font-size="4.5" fill="#6b6e88" font-family="monospace">IF</text>
+          <text x="180" y="163" font-size="4.5" fill="#6b6e88" font-family="monospace">SVM</text>
+          <text x="203" y="163" font-size="4.5" fill="#6b6e88" font-family="monospace">LOF</text>
+          <text x="226" y="163" font-size="4.5" fill="#6b6e88" font-family="monospace">GMM</text>
+          <text x="272" y="54" font-size="7" fill="#ff4d6d" font-family="monospace" font-weight="bold">CONCLUSION</text>
+          <rect x="272" y="59" width="150" height="3" rx="1" fill="#1c1f32"/>
+          <rect x="272" y="66" width="130" height="3" rx="1" fill="#1c1f32"/>
+          <rect x="272" y="73" width="145" height="3" rx="1" fill="#1c1f32"/>
+          <text x="272" y="100" font-size="7" fill="#ff4d6d" font-family="monospace" font-weight="bold">AUTHORS</text>
+          <text x="272" y="113" font-size="6.5" fill="#eceeff" font-family="monospace">Fatima Dakalbab</text>
+          <text x="272" y="124" font-size="5.5" fill="#6b6e88" font-family="monospace">Research Assistant · ACoE · UOS</text>
+          <text x="272" y="142" font-size="5" fill="#6b6e88" font-family="monospace">fatima.dakalbab@gmail.com</text>
+        </svg>
+      </div>
+      <div class="dl"><span class="dln">Academic Research Poster</span><span class="dlt">Print · A0 · IIF-2025</span></div>
+    </div>
 
-									<!-- Demo info -->
-									<div class="row text-center mt-4">
-										<div class="col-6 border-right">
-											<div class="h4 font-weight-bold mb-0">28%</div><span
-												class="small text-gray">Last week</span>
-										</div>
-										<div class="col-6">
-											<div class="h4 font-weight-bold mb-0">60%</div><span
-												class="small text-gray">Last month</span>
-										</div>
-									</div>
-									<!-- END -->
-								</div>
-							</div>
+    <!-- GCAA Event Graphic -->
+    <div class="di">
+      <div class="dc">
+        <svg class="dp" viewBox="0 0 220 165" xmlns="http://www.w3.org/2000/svg">
+          <rect width="220" height="165" fill="#060810"/>
+          <defs><linearGradient id="gg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#6c63ff" stop-opacity="0.2"/><stop offset="100%" stop-color="#ff4d6d" stop-opacity="0.15"/></linearGradient></defs>
+          <rect width="220" height="165" fill="url(#gg)"/>
+          <circle cx="178" cy="28" r="40" fill="none" stroke="#6c63ff" stroke-width="0.5" opacity="0.4"/>
+          <circle cx="178" cy="28" r="26" fill="none" stroke="#6c63ff" stroke-width="0.5" opacity="0.3"/>
+          <circle cx="178" cy="28" r="14" fill="none" stroke="#6c63ff" stroke-width="1" opacity="0.5"/>
+          <text x="16" y="28" font-size="6.5" fill="#6b6e88" font-family="monospace" letter-spacing="2">OPEN DATA</text>
+          <text x="16" y="50" font-size="20" fill="#eceeff" font-family="sans-serif" font-weight="900">AI DAY</text>
+          <text x="16" y="66" font-size="7.5" fill="#00e5c4" font-family="monospace">General Civil Aviation Authority</text>
+          <line x1="16" y1="78" x2="110" y2="78" stroke="#00e5c4" stroke-width="1" opacity="0.5"/>
+          <text x="16" y="94" font-size="5.5" fill="#6b6e88" font-family="monospace">PRESENTER</text>
+          <text x="16" y="108" font-size="8" fill="#eceeff" font-family="monospace">Fatima Dakalbab</text>
+          <text x="16" y="120" font-size="5.5" fill="#6b6e88" font-family="monospace">University of Sharjah</text>
+          <text x="16" y="146" font-size="6.5" fill="#00e5c4" font-family="monospace">APRIL 2026 · ABU DHABI</text>
+          <rect x="0" y="154" width="220" height="11" fill="#00e5c4" opacity="0.12"/>
+        </svg>
+      </div>
+      <div class="dl"><span class="dln">Event Graphic</span><span class="dlt">Digital · GCAA 2026</span></div>
+    </div>
 
-							<div class="col-lg-4 mb-4">
-								<div class="bg-white rounded-lg shadow p-4">
-									<h2 class="h5 font-weight-bold text-center mb-4">Designing</h2>
+    <!-- Roll-up Banner -->
+    <div class="di">
+      <div class="dc">
+        <svg class="dp" viewBox="0 0 220 165" xmlns="http://www.w3.org/2000/svg">
+          <rect width="220" height="165" fill="#0d0f1a"/>
+          <defs><pattern id="dp2" x="0" y="0" width="18" height="18" patternUnits="userSpaceOnUse"><line x1="0" y1="18" x2="18" y2="0" stroke="#1c1f32" stroke-width="1"/></pattern></defs>
+          <rect x="0" y="0" width="72" height="165" fill="url(#dp2)"/>
+          <rect x="70" y="0" width="3" height="165" fill="#00e5c4" opacity="0.65"/>
+          <text x="86" y="32" font-size="5.5" fill="#00e5c4" font-family="monospace" letter-spacing="2">RESEARCH CENTER</text>
+          <path d="M86 44 L106 44 L113 54 L106 64 L86 64 L79 54 Z" fill="none" stroke="#00e5c4" stroke-width="1" opacity="0.6"/>
+          <text x="90" y="59" font-size="7.5" fill="#00e5c4" font-family="monospace">ACoE</text>
+          <text x="86" y="86" font-size="10" fill="#eceeff" font-family="sans-serif" font-weight="bold">Aviation</text>
+          <text x="86" y="100" font-size="10" fill="#eceeff" font-family="sans-serif" font-weight="bold">Center of</text>
+          <text x="86" y="114" font-size="10" fill="#00e5c4" font-family="sans-serif" font-weight="bold">Excellence</text>
+          <rect x="86" y="124" width="70" height="1" fill="#1c1f32"/>
+          <text x="86" y="138" font-size="5.5" fill="#6b6e88" font-family="monospace">University of Sharjah</text>
+          <text x="86" y="150" font-size="5" fill="#6b6e88" font-family="monospace">www.sharjah.ac.ae/acoe</text>
+          <circle cx="36" cy="82" r="28" fill="none" stroke="#00e5c4" stroke-width="0.5" opacity="0.15"/>
+          <circle cx="36" cy="82" r="16" fill="none" stroke="#00e5c4" stroke-width="0.5" opacity="0.12"/>
+        </svg>
+      </div>
+      <div class="dl"><span class="dln">Roll-Up Banner</span><span class="dlt">Print · ACoE</span></div>
+    </div>
+  </div>
+</div></div>
 
-									<!-- Progress bar 1 -->
-									<div class="progress mx-auto" data-value='80'>
-										<span class="progress-left">
-											<span class="progress-bar border-primary"></span>
-										</span>
-										<span class="progress-right">
-											<span class="progress-bar border-primary"></span>
-										</span>
-										<div
-											class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-											<div class="h2 font-weight-bold">80<sup class="small">%</sup></div>
-										</div>
-									</div>
-									<!-- END -->
+<!-- SKILLS -->
+<section id="skills"><div class="sw">
+  <div class="sh"><span class="sn">05</span><h2 class="st">Skills</h2><div class="sl"></div></div>
+  <div class="sg fu">
+    <div class="skgr"><div class="skgt">AI & Machine Learning</div><div class="ski"><span class="skc">Deep Learning</span><span class="skc">NLP</span><span class="skc">LLMs</span><span class="skc">Anomaly Detection</span><span class="skc">Attention Mechanisms</span><span class="skc">TensorFlow</span><span class="skc">PyTorch</span><span class="skc">Scikit-learn</span><span class="skc">Transformers</span><span class="skc">Time-Series</span></div></div>
+    <div class="skgr"><div class="skgt">Programming</div><div class="ski"><span class="skc">Python</span><span class="skc">JavaScript</span><span class="skc">C++ / C#</span><span class="skc">HTML / CSS</span><span class="skc">React</span><span class="skc">SQL</span><span class="skc">Node.js</span><span class="skc">JSON / XML</span></div></div>
+    <div class="skgr"><div class="skgt">Backend & DevOps</div><div class="ski"><span class="skc">ERPNext / Frappe</span><span class="skc">RPA</span><span class="skc">Python APIs</span><span class="skc">MySQL</span><span class="skc">Git / GitHub</span><span class="skc">PowerShell</span><span class="skc">Jupyter</span><span class="skc">Google Colab</span></div></div>
+    <div class="skgr"><div class="skgt">Data & Research</div><div class="ski"><span class="skc">Pandas / NumPy</span><span class="skc">Multivariate Data</span><span class="skc">LaTeX</span><span class="skc">Mendeley</span><span class="skc">ArcGIS</span><span class="skc">Literature Review</span><span class="skc">Model Benchmarking</span></div></div>
+    <div class="skgr"><div class="skgt">Design & Creative</div><div class="ski"><span class="skc">Photoshop</span><span class="skc">Illustrator</span><span class="skc">Premiere Pro</span><span class="skc">After Effects</span><span class="skc">Adobe XD</span><span class="skc">Figma</span><span class="skc">Canva</span><span class="skc">3Ds Max</span><span class="skc">Unity</span><span class="skc">Dreamweaver</span></div></div>
+    <div class="skgr"><div class="skgt">Research & Leadership</div><div class="ski"><span class="skc">Academic Writing</span><span class="skc">Research Supervision</span><span class="skc">Workshop Organization</span><span class="skc">Technical Presentations</span><span class="skc">Cross-functional Teams</span><span class="skc">Arabic (Native)</span><span class="skc">English (C2)</span></div></div>
+  </div>
+</div></section>
 
-									<!-- Demo info -->
-									<div class="row text-center mt-4">
-										<div class="col-6 border-right">
-											<div class="h4 font-weight-bold mb-0">28%</div><span
-												class="small text-gray">Last week</span>
-										</div>
-										<div class="col-6">
-											<div class="h4 font-weight-bold mb-0">60%</div><span
-												class="small text-gray">Last month</span>
-										</div>
-									</div>
-									<!-- END -->
-								</div>
-							</div>
+<!-- CERTIFICATES -->
+<div id="certificates" class="swf"><div class="inner">
+  <div class="sh"><span class="sn">06</span><h2 class="st">Certificates</h2><div class="sl"></div></div>
+  <div class="cm fu">
+    <div class="ct">
+      <div class="cpill">GCAA AI Open Data Ceremony — Apr 2026</div>
+      <div class="cpill">IEEE IWCMC Presenter — May 2025</div>
+      <div class="cpill">IIF-2025 Presenter · Univ. of Sharjah</div>
+      <div class="cpill">ICoMTEC 2024 Outstanding Contribution</div>
+      <div class="cpill">IEEE CINS 2024 Speaker</div>
+      <div class="cpill">Basic First Aid 100% · HSI</div>
+      <div class="cpill">Remote Sensing & AI · MBRSC</div>
+      <div class="cpill">Thesis Defense Workshop · UOS</div>
+      <div class="cpill">Drone Innovation Workshop · 2025</div>
+      <div class="cpill">GCAA AI Open Data Ceremony — Apr 2026</div>
+      <div class="cpill">IEEE IWCMC Presenter — May 2025</div>
+      <div class="cpill">IIF-2025 Presenter · Univ. of Sharjah</div>
+      <div class="cpill">ICoMTEC 2024 Outstanding Contribution</div>
+      <div class="cpill">IEEE CINS 2024 Speaker</div>
+      <div class="cpill">Basic First Aid 100% · HSI</div>
+      <div class="cpill">Remote Sensing & AI · MBRSC</div>
+      <div class="cpill">Thesis Defense Workshop · UOS</div>
+      <div class="cpill">Drone Innovation Workshop · 2025</div>
+    </div>
+  </div>
+  <div class="cdg fu">
+    <div class="cc"><div class="ci">GCAA · General Civil Aviation Authority</div><div class="cn">Certificate of Appreciation — AI Open Data Ceremony</div><div class="cd">April 2026 · Abu Dhabi, UAE · Signed by Director General</div></div>
+    <div class="cc"><div class="ci">IEEE IWCMC 2025</div><div class="cn">Certificate of Appreciation — ChatGPT for Coding Paper (Presenter)</div><div class="cd">May 12–16, 2025 · Abu Dhabi, UAE</div></div>
+    <div class="cc"><div class="ci">University of Sharjah</div><div class="cn">Certificate of Participation — 2nd Int'l Innovation X.0 Forum (IIF-2025)</div><div class="cd">April 9–10, 2025 · Presenter</div></div>
+    <div class="cc"><div class="ci">ASTEEC · ICoMTEC 2024</div><div class="cn">Outstanding Contribution Award — AI-Driven Approaches for Cultural Heritage</div><div class="cd">December 21, 2024 · Yogyakarta</div></div>
+    <div class="cc"><div class="ci">IEEE CINS 2024 · BITS Pilani Dubai</div><div class="cn">Speaker Certificate — Algorithmic Trading in Forex Paper</div><div class="cd">November 28–29, 2024 · Dubai, UAE</div></div>
+    <div class="cc"><div class="ci">HSI · Health & Safety Institute</div><div class="cn">Record of Completion — Basic First Aid (Score: 100%)</div><div class="cd">March 26, 2025</div></div>
+    <div class="cc"><div class="ci">ESGRS · Mohammed Bin Rashid Space Centre</div><div class="cn">Certificate of Attendance — Advances in Remote Sensing & AI in Marine Studies</div><div class="cd">January 29, 2025</div></div>
+    <div class="cc"><div class="ci">University of Sharjah · College of Graduate Studies</div><div class="cn">Certificate of Attendance — Thesis Defense Workshop</div><div class="cd">November 10, 2024</div></div>
+    <div class="cc"><div class="ci">University of Sharjah</div><div class="cn">Certificate — Drone Innovation: Air Pollution & Climate Research</div><div class="cd">March 5, 2025</div></div>
+  </div>
+</div></div>
 
-							<div class="col-lg-4 mb-4">
-								<div class="bg-white rounded-lg shadow p-4">
-									<h2 class="h5 font-weight-bold text-center mb-4">HTML - CSS - JS</h2>
+<!-- CONTACT -->
+<div id="contact" class="cs">
+  <div class="ci2">
+    <div>
+      <div style="font-size:10px;color:var(--accent);letter-spacing:0.25em;margin-bottom:16px">07 · CONTACT</div>
+      <h2 class="ch">Let's<span>Connect.</span></h2>
+      <p class="csub">Open to research collaborations, AI engineering roles, DevOps, and aviation tech opportunities. Based in Sharjah/Dubai, UAE.</p>
+    </div>
+    <div class="clinks">
+      <a href="mailto:fatima.dakalbab@gmail.com" class="clink"><span class="clink-i">✉</span><span class="clink-l">fatima.dakalbab@gmail.com</span><span class="clink-a">→</span></a>
+      <a href="https://github.com/fatima-dakalbab" target="_blank" class="clink"><span class="clink-i">◈</span><span class="clink-l">github.com/fatima-dakalbab</span><span class="clink-a">→</span></a>
+      <a href="https://fatima-dakalbab.github.io" target="_blank" class="clink"><span class="clink-i">◉</span><span class="clink-l">fatima-dakalbab.github.io</span><span class="clink-a">→</span></a>
+      <a href="https://scholar.google.com/citations?user=pImWe6kAAAAJ&hl=en" target="_blank" class="clink"><span class="clink-i">◑</span><span class="clink-l">Google Scholar · 843+ Citations · h-index 9</span><span class="clink-a">→</span></a>
+      <a href="tel:+971528310013" class="clink"><span class="clink-i">◎</span><span class="clink-l">+971 52 831 0013</span><span class="clink-a">→</span></a>
+    </div>
+  </div>
+</div>
 
-									<!-- Progress bar 1 -->
-									<div class="progress mx-auto" data-value='75'>
-										<span class="progress-left">
-											<span class="progress-bar border-primary"></span>
-										</span>
-										<span class="progress-right">
-											<span class="progress-bar border-primary"></span>
-										</span>
-										<div
-											class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-											<div class="h2 font-weight-bold">75<sup class="small">%</sup></div>
-										</div>
-									</div>
-									<!-- END -->
+<footer>
+  <span>© 2026 Fatima Dakalbab</span>
+  <span style="color:var(--accent)">AI Researcher · Designer · Engineer · Sharjah, UAE</span>
+</footer>
 
-									<!-- Demo info -->
-									<div class="row text-center mt-4">
-										<div class="col-6 border-right">
-											<div class="h4 font-weight-bold mb-0">28%</div><span
-												class="small text-gray">Last week</span>
-										</div>
-										<div class="col-6">
-											<div class="h4 font-weight-bold mb-0">60%</div><span
-												class="small text-gray">Last month</span>
-										</div>
-									</div>
-									<!-- END -->
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-6 animate-box">
-								<div class="progress-wrap ftco-animate">
-									<h3>Adobe Applications</h3>
-									<div class="progress">
-										<div class="progress-bar color-1" role="progressbar" aria-valuenow="90"
-											aria-valuemin="0" aria-valuemax="100" style="width:90%">
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-6 animate-box">
-								<div class="progress-wrap ftco-animate">
-									<h3>Visual Studio Code</h3>
-									<div class="progress">
-										<div class="progress-bar color-2" role="progressbar" aria-valuenow="75"
-											aria-valuemin="0" aria-valuemax="100" style="width:75%">
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-6 animate-box">
-								<div class="progress-wrap ftco-animate">
-									<h3>Jupter Notebook</h3>
-									<div class="progress">
-										<div class="progress-bar color-3" role="progressbar" aria-valuenow="45"
-											aria-valuemin="0" aria-valuemax="100" style="width:45%">
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-6 animate-box">
-								<div class="progress-wrap ftco-animate">
-									<h3>Microsoft Office</h3>
-									<div class="progress">
-										<div class="progress-bar color-4" role="progressbar" aria-valuenow="90"
-											aria-valuemin="0" aria-valuemax="100" style="width:90%">
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-6 animate-box">
-								<div class="progress-wrap ftco-animate">
-									<h3>Java - C++ - PHP - MYSQL</h3>
-									<div class="progress">
-										<div class="progress-bar color-5" role="progressbar" aria-valuenow="79"
-											aria-valuemin="0" aria-valuemax="100" style="width:79%">
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-6 animate-box">
-								<div class="progress-wrap ftco-animate">
-									<h3>Unity - GameSalad</h3>
-									<div class="progress">
-										<div class="progress-bar color-6" role="progressbar" aria-valuenow="50"
-											aria-valuemin="0" aria-valuemax="100" style="width:50%">
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div id="page-4" class="page four">
-						<h2 class="heading">Activities</h2>
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-star"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">19-4-2020</span>
-								<h2>Won the 2nd Place in NYUAD Hackathon</h2>
-								<span class="position">Online competition, due to COVID-19</span>
-								<p>Built TaskJam with an increadible team, TaskJam is a mobile app that addresses the
-									problem of personal productivity during
-									lockdown by pushing you to accomplish daily tasks and goals. </p>
-							</div>
-						</div>
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-star"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">2019-present</span>
-								<h2>Member of UAE ACM Chapter</h2>
-								<span class="position">University of Sharjah, Open UAE</span>
-								<p>Holding events and activitise regarding ACM organiztion.</p>
-							</div>
-						</div>
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-star"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">12-2-2019</span>
-								<h2>Top 10 UAE Hackathon</h2>
-								<span class="position">Goverment of Sharjah</span>
-								<p>UAE Hackathon 2.0 data for happiness and wellbeing competition, Government of
-									Sharjah.</p>
-							</div>
-						</div>
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-star"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">3-2-2019</span>
-								<h2>Students' Lunch Time Research Talk</h2>
-								<span class="position">University of Sharjah</span>
-								<p>Honored to attend Students’ Lunch Time Research Talk that was presented by the Dean
-									of college of science in University of Sharjah.</p>
-							</div>
-						</div>
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-star"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">19-2-2019</span>
-								<h2>Moderator at #Liv4Innovation</h2>
-								<span class="position">Youth Hub - Emirates Tower</span>
-								<p>Honored to be a moderator of a panel in #Liv4Innovation with 4 women from computing
-									industry, Liv Digital Lifestyle Bank, Emirates Tower.</p>
-							</div>
-						</div>
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-star"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">7-8-2015</span>
-								<h2>First Place Public Speacking Competition</h2>
-								<span class="position">Rashid al Saleh Private School</span>
-								<p> Won the first place by the competiton held by Move for the youth.</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+<script>
+// Cursor
+const cursor=document.getElementById('cursor'),ring=document.getElementById('cursorRing');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cursor.style.left=mx-5+'px';cursor.style.top=my-5+'px'});
+(function ar(){rx+=(mx-rx)*0.12;ry+=(my-ry)*0.12;ring.style.left=rx-17+'px';ring.style.top=ry-17+'px';requestAnimationFrame(ar)})();
+document.querySelectorAll('a,button,.pc,.cc,.skc,.di').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{cursor.style.transform='scale(2.2)';ring.style.transform='scale(1.5)';ring.style.opacity='0.7'});
+  el.addEventListener('mouseleave',()=>{cursor.style.transform='scale(1)';ring.style.transform='scale(1)';ring.style.opacity='0.35'});
+});
 
-	<section class="ftco-section" id="services-section">
-		<div class="container-fluid px-md-5">
-			<div class="row justify-content-center py-5 mt-5">
-				<div class="col-md-12 heading-section text-center ftco-animate">
-					<h1 class="big big-2">Services</h1>
-					<h2 class="mb-4">Projects</h2>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-4 text-center d-flex ftco-animate">
-					<a href="https://drive.google.com/open?id=1ZCskQ9eepgM6Minc7eyUpALU2_X725y3" target="_blank"
-						class="services-1 shadow">
-						<span class="icon">
-							<i class="flaticon-web-design"></i>
-						</span>
-						<div class="desc">
-							<h3 class="mb-5">Web Development</h3>
-							<p>Website development using html, CSS, JavaScript, PHP, MYSQL</p>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-4 text-center d-flex ftco-animate">
-					<a href="https://drive.google.com/open?id=10AzVr1ojCN1gQsFqng3P1AyJrKOLD6BM" target="_blank"
-						class="services-1 shadow">
-						<span class="icon">
-							<i class="flaticon-folder"></i>
-						</span>
-						<div class="desc">
-							<h3 class="mb-5">Game Desgin and Development</h3>
-							<p>Games developed using either GameSalad and Unity</p>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-4 text-center d-flex ftco-animate">
-					<a href="https://drive.google.com/open?id=1ER0YrbQToM5dpicdbb8aLlMzeksHcAXr" target="_blank"
-						class="services-1 shadow">
-						<span class="icon">
-							<i class="flaticon-graphic-design"></i>
-						</span>
-						<div class="desc">
-							<h3 class="mb-5">Graphic Design</h3>
-							<p>Designs of Logos, Posters, etc..</p>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-4 text-center d-flex ftco-animate">
-					<a href="https://drive.google.com/drive/folders/14MB9cGfbDoRHpRT-agMA-5Jm_ajL4beu?usp=sharing" target="_blank"
-						class="services-1 shadow">
-						<span class="icon">
-							<i class="flaticon-documents"></i>
-						</span>
-						<div class="desc">
-							<h3 class="mb-5">Research Work</h3>
-							<p>Published research papers on several topics: Blockchain, Artificial Intelligence, Mahcine Learning, Deep Learning, and Anomaly Detection</p>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-4 text-center d-flex ftco-animate">
-					<a href="https://drive.google.com/open?id=1IQh3wAbBBGHW7Y0FIwdQdlB80tjpyEBe" target="_blank"
-						class="services-1 shadow">
-						<span class="icon">
-							<i class="flaticon-graphic-tablet"></i>
-						</span>
-						<div class="desc">
-							<h3 class="mb-5">Drawing</h3>
-							<p>Digital drawings with photoshop and paint tool sai</p>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-4 text-center d-flex ftco-animate">
-					<a href="https://drive.google.com/open?id=1-islgDJrvdaz6CkPeHotuTmdRnU3vcJd" target="_blank"
-						class="services-1 shadow">
-						<span class="icon">
-							<i class="flaticon-creativity"></i>
-						</span>
-						<div class="desc">
-							<h3 class="mb-5">Character Design</h3>
-							<p>Designing characters with a background story and concept ideas.</p>
-						</div>
-					</a>
-				</div>
-			</div>
-		</div>
-	</section>
+// IntersectionObserver
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')}),{threshold:0.1});
+document.querySelectorAll('.fu,.ti').forEach(el=>obs.observe(el));
 
+// Counter
+function countUp(el,target,dur=1600){let s=0;const fn=ts=>{if(!s)s=ts;const p=Math.min((ts-s)/dur,1);el.textContent=Math.floor(p*target);p<1?requestAnimationFrame(fn):el.textContent=target};requestAnimationFrame(fn)}
+const cEl=document.getElementById('citeN'),pEl=document.getElementById('pubN'),cfEl=document.getElementById('confN');
+const ho=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){countUp(cEl,843,2200);countUp(pEl,15,1400);countUp(cfEl,6,1200);ho.disconnect()}})},{threshold:0.3});
+if(cEl)ho.observe(cEl.closest('.scholar-card'));
 
-	<section class="ftco-section ftco-project" id="projects-section">
-		<div class="container-fluid px-md-0">
-			<div class="row no-gutters justify-content-center pb-5">
-				<div class="col-md-12 heading-section text-center ftco-animate">
-					<h2 class="mb-4">My Drawings</h2>
-					<p>Drawing is my own type of medicine, Simply art is my escape.</p>
-					<p>Check my <a href="https://www.instagram.com/fatima_d.a.b/" target="_blank">Instagram</a> for latest drawings</p>
-				</div>
-			</div>
-			<div class="row no-gutters">
-				<div class="col-md-4">
-					<div class="project img ftco-animate d-flex justify-content-center align-items-center"
-						style="background-image: url(images/work-1.png);">
-						<div class="overlay"></div>
-						<div class="text text-center p-4">
-							<h3><a href="https://www.instagram.com/p/BveCan0JRQw/" target="_blank">'*'Estella'*' A shiny
-									star character</a></h3>
-							<span>Character Design</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="project img ftco-animate d-flex justify-content-center align-items-center"
-						style="background-image: url(images/work-2.png);">
-						<div class="overlay"></div>
-						<div class="text text-center p-4">
-							<h3><a href="https://www.instagram.com/p/CCgY6OIpYDC/" target="_blank">يا الله" كافية لمسح
-									همومي، "يا الله" تملأ القلب بالاطمئنان، "يا الله" مفتاح سر لكل ما يخفيه القلب" </a>
-							</h3>
-							<span>Digtal Art</span>
-						</div>
-					</div>
-				</div>
+// Citation bar chart
+const vals=[8,22,68,130,178,220,217],years=[19,20,21,22,23,24,25];
+const max=Math.max(...vals),ch=document.getElementById('citChart');
+if(ch){vals.forEach((v,i)=>{const b=document.createElement('div');b.className='bar';b.style.height=Math.round(v/max*100)+'%';b.title=`20${years[i]}: ${v} citations`;ch.appendChild(b)})}
 
-				<div class="col-md-4">
-					<div class="project img ftco-animate d-flex justify-content-center align-items-center"
-						style="background-image: url(images/work-3.jpg);">
-						<div class="overlay"></div>
-						<div class="text text-center p-4">
-							<h3><a href="https://www.instagram.com/p/Bo-q-jGhgHt/" target="_blank">hey bird <i
-										class="em em-bird" aria-role="presentation" aria-label="BIRD"></i> .. let's
-									talk</a></h3>
-							<span>Digtal Art</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="project img ftco-animate d-flex justify-content-center align-items-center"
-						style="background-image: url(images/work-4.png);">
-						<div class="overlay"></div>
-						<div class="text text-center p-4">
-							<h3><a href="https://www.instagram.com/p/B4QHmTyJ9hP/" target="_blank">life hurts when the
-									mind is full of attachments</a></h3>
-							<span>@yung_pueblo</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="project img ftco-animate d-flex justify-content-center align-items-center"
-						style="background-image: url(images/work-5.jpg);">
-						<div class="overlay"></div>
-						<div class="text text-center p-4">
-							<h3><a href="https://www.instagram.com/p/BmTKCAJBYzy/" target="_blank">Life swings like a
-									pendulum backward and forward between sadness and joy</a></h3>
-							<span>Digtal Art</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="project img ftco-animate d-flex justify-content-center align-items-center"
-						style="background-image: url(images/work-6.jpg);">
-						<div class="overlay"></div>
-						<div class="text text-center p-4">
-							<h3><a href="https://www.instagram.com/p/B5U8b0DpyJq/" target="_blank">ولنا حكاية بعد مطر..
-									أحيت القلوب بعد موتها</a></h3>
-							<span>Digtal Art</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="project img ftco-animate d-flex justify-content-center align-items-center"
-						style="background-image: url(images/work-7.jpg);">
-						<div class="overlay"></div>
-						<div class="text text-center p-4">
-							<h3><a href="https://www.instagram.com/p/CCOg3xmJkJO/" target="_blank">Cats are my favorite
-									animal pet</a></h3>
-							<span>Potrait Art</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="project img ftco-animate d-flex justify-content-center align-items-center"
-						style="background-image: url(images/work-8.jpg);">
-						<div class="overlay"></div>
-						<div class="text text-center p-4">
-							<h3><a href="https://www.instagram.com/p/CBVN-OtJKSt/" target="_blank">Challenge:
-									#drawthisinyourstyle</a></h3>
-							<span>@girard_eloise</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="project img ftco-animate d-flex justify-content-center align-items-center"
-						style="background-image: url(images/work-9.png);">
-						<div class="overlay"></div>
-						<div class="text text-center p-4">
-							<h3><a href="https://www.instagram.com/p/B9j9xz8pSiO/" target="_blank">When you look into
-									her eyes... A wave of power will drift your heart away</a></h3>
-							<span>Digtal Art</span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+// FDR Canvas
+const cv=document.getElementById('fdrCanvas');
+if(cv){const ctx=cv.getContext('2d'),W=cv.width,H=cv.height;let t=0;
+const lines=[{c:'#00e5c4',a:28,f:0.022,ph:0,b:0.42},{c:'#6c63ff',a:18,f:0.038,ph:1.2,b:0.6},{c:'#ff4d6d',a:12,f:0.056,ph:2.1,b:0.75}];
+function d(){
+  ctx.clearRect(0,0,W,H);
+  ctx.strokeStyle='rgba(0,229,196,0.05)';ctx.lineWidth=1;
+  for(let x=0;x<W;x+=40){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke()}
+  for(let y=0;y<H;y+=25){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke()}
+  lines.forEach(l=>{ctx.beginPath();ctx.strokeStyle=l.c;ctx.lineWidth=1.5;ctx.globalAlpha=0.65;
+    for(let x=0;x<W;x++){const n=(Math.random()-0.5)*1.2,y=H*l.b+Math.sin((x+t)*l.f+l.ph)*l.a+Math.sin((x+t)*l.f*2.4)*l.a*0.25+n;x===0?ctx.moveTo(x,y):ctx.lineTo(x,y)}ctx.stroke()});
+  const ax=(Math.sin(t*0.008)*0.15+0.72)*W;
+  ctx.globalAlpha=0.9;ctx.strokeStyle='#ff4d6d';ctx.lineWidth=1;ctx.setLineDash([4,3]);
+  ctx.beginPath();ctx.moveTo(ax,0);ctx.lineTo(ax,H);ctx.stroke();ctx.setLineDash([]);
+  ctx.fillStyle='#ff4d6d';ctx.font='9px DM Mono,monospace';ctx.fillText('⚠ ANOMALY',ax+4,14);
+  ctx.globalAlpha=1;t+=0.7;requestAnimationFrame(d)}d()}
 
-
-	<section class="ftco-section ftco-project" id="certificate-section">
-
-		<div class="col-md-12 heading-section text-center ftco-animate">
-			<h2 class="mb-4">My Certificates</h2>
-			<p>Collection of Certificates</p>
-		</div>
-
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-md-7 ftco-animate text-center">
-
-					<div class="w3-content" style="max-width:800px">
-						<img class="mySlides" src="images/certificates/certificate_1.jpg" style="width:100%">
-						<img class="mySlides" src="images/certificates/certificate_2.jpg" style="width:100%">
-						<img class="mySlides" src="images/certificates/certificate_3.jpg" style="width:100%">
-						<img class="mySlides" src="images/certificates/certificate_4.jpg" style="width:100%">
-						<img class="mySlides" src="images/certificates/certificate_5.jpg" style="width:100%">
-						<img class="mySlides" src="images/certificates/certificate_6.jpg" style="width:100%">
-						<img class="mySlides" src="images/certificates/certificate_7.jpg" style="width:100%">
-						<img class="mySlides" src="images/certificates/certificate_8.jpg" style="width:100%">
-						<img class="mySlides" src="images/certificates/certificate_9.jpg" style="width:100%">
-						<img class="mySlides" src="images/certificates/certificate_10.jpg" style="width:100%">
-						<img class="mySlides" src="images/certificates/certificate_11.jpg" style="width:100%">
-						<img class="mySlides" src="images/certificates/certificate_12.jpg" style="width:100%">
-						<img class="mySlides" src="images/certificates/certificate_13.jpg" style="width:100%">
-						<img class="mySlides" src="images/certificates/certificate_14.jpg" style="width:100%">
-						<img class="mySlides" src="images/certificates/certificate_15.jpg" style="width:100%">
-						<img class="mySlides" src="images/certificates/certificate_16.jpg" style="width:100%">
-						<img class="mySlides" src="images/certificates/certificate_17.jpg" style="width:100%">
-						<img class="mySlides" src="images/certificates/certificate_18.jpg" style="width:100%">
-						<img class="mySlides" src="images/certificates/certificate_19.jpg" style="width:100%">
-						<img class="mySlides" src="images/certificates/certificate_20.jpg" style="width:100%">
-					</div>
-
-					<div class="w3-center">
-						<div> &nbsp </div>
-						<div class="w3-section">
-							<button class="btn btn-primary py-3 px-5" onclick="plusDivs(-1)">❮ Prev</button>
-							<button class="btn btn-primary py-3 px-5" onclick="plusDivs(1)">Next ❯</button>
-						</div>
-					</div>
-
-					<script>
-						var slideIndex = 0;
-						carousel();
-
-						function carousel() {
-							var i;
-							var x = document.getElementsByClassName("mySlides");
-							for (i = 0; i < x.length; i++) {
-								x[i].style.display = "none";
-							}
-							slideIndex++;
-							if (slideIndex > x.length) { slideIndex = 1 }
-							x[slideIndex - 1].style.display = "block";
-							setTimeout(carousel, 7000);
-						}
-						var slideIndex = 1;
-						showDivs(slideIndex);
-
-						function plusDivs(n) {
-							showDivs(slideIndex += n);
-						}
-
-						function currentDiv(n) {
-							showDivs(slideIndex = n);
-						}
-
-						function showDivs(n) {
-							var i;
-							var x = document.getElementsByClassName("mySlides");
-							var dots = document.getElementsByClassName("demo");
-							if (n > x.length) { slideIndex = 1 }
-							if (n < 1) { slideIndex = x.length }
-							for (i = 0; i < x.length; i++) {
-								x[i].style.display = "none";
-							}
-							for (i = 0; i < dots.length; i++) {
-								dots[i].className = dots[i].className.replace(" w3-red", "");
-							}
-							x[slideIndex - 1].style.display = "block";
-							dots[slideIndex - 1].className += " w3-red";
-						}
-					</script>
-				</div>
-			</div>
-		</div>
-
-	</section>
-
-	<section class="ftco-section ftco-hireme img" style="background-image: url(images/bg_1.jpg)">
-		<div class="overlay"></div>
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-md-7 ftco-animate text-center">
-					<h2>I'm <span>Available</span> for freelancing</h2>
-					<p>Currently looking for hands-on experience and practical knowledge</p>
-				</div>
-			</div>
-		</div>
-	</section>
-
-
-	<section class="ftco-section contact-section ftco-no-pb" id="contact-section">
-		<div class="container">
-			<div class="row justify-content-center mb-5 pb-3">
-				<div class="col-md-7 heading-section text-center ftco-animate">
-					<h1 class="big big-2">Contact</h1>
-					<h2 class="mb-4">Contact Me</h2>
-				</div>
-			</div>
-
-			<div class="row d-flex contact-info mb-5">
-				<div class="col-md-6 col-lg-3 d-flex ftco-animate">
-					<div class="align-self-stretch box text-center p-4 shadow">
-						<div class="icon d-flex align-items-center justify-content-center">
-							<span class="icon-map-signs"></span>
-						</div>
-						<div>
-							<h3 class="mb-4">Address</h3>
-							<p>Dubai, UAE</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-3 d-flex ftco-animate">
-					<div class="align-self-stretch box text-center p-4 shadow">
-						<div class="icon d-flex align-items-center justify-content-center">
-							<span class="icon-phone2"></span>
-						</div>
-						<div>
-							<h3 class="mb-4">Contact Number</h3>
-							<p><a href="tel://1234567920">+ 97152 8310013</a></p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-3 d-flex ftco-animate">
-					<div class="align-self-stretch box text-center p-4 shadow">
-						<div class="icon d-flex align-items-center justify-content-center">
-							<span class="icon-paper-plane"></span>
-						</div>
-						<div>
-							<h3 class="mb-4">Email Address</h3>
-							<p><a href="mailto:info@yoursite.com"> fatima.dakalbab
-									@gmail.com</a></p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-3 d-flex ftco-animate">
-					<div class="align-self-stretch box text-center p-4 shadow">
-						<div class="icon d-flex align-items-center justify-content-center">
-							<span style="font-size: 60px" class="icon-globe"></span>
-						</div>
-						<div>
-							<h3 class="mb-4">Website</h3>
-							<p><a href="#">fatima-dakalbab.com</a></p>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="row no-gutters block-9">
-				<div class="col-md-6 order-md-last d-flex">
-					<form action="mailto:fatima.dakalbab@gmail.com" class="bg-light p-4 p-md-5 contact-form">
-						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Your Name">
-						</div>
-						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Your Email">
-						</div>
-						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Subject">
-						</div>
-						<div class="form-group">
-							<textarea name="" id="" cols="30" rows="7" class="form-control"
-								placeholder="Message"></textarea>
-						</div>
-						<div class="form-group">
-							<input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
-						</div>
-					</form>
-
-				</div>
-
-				<div class="col-md-6 d-flex">
-					<div class="img" style="background-image: url(images/contact.jpg);"></div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-
-	<footer class="ftco-footer ftco-section">
-		<div class="container">
-			<div class="row mb-5">
-				<div class="col-md">
-					<div class="ftco-footer-widget mb-4">
-						<h2 class="ftco-heading-2">About</h2>
-						<p>Fatima is an ambitious, highly motivated, reliable and dedicated IT multimedia student with a
-							passion for learning.</p>
-						<ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-							<li class="ftco-animate"><a href="https://www.linkedin.com/in/fatima-dakalbab/"
-									target="_blank"><span class="icon-linkedin"></span></a></li>
-							<li class="ftco-animate"><a href="https://www.facebook.com/FatimaDakalbab"
-									target="_blank"><span class="icon-facebook"></span></a></li>
-							<li class="ftco-animate"><a href="https://www.instagram.com/fatima_d.a.b/"
-									target="_blank"><span class="icon-instagram"></span></a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-md">
-					<div class="ftco-footer-widget mb-4 ml-md-4">
-						<h2 class="ftco-heading-2">Links</h2>
-						<ul class="list-unstyled">
-							<li><a href="#home-section"><span class="icon-long-arrow-right mr-2"></span>Home</a></li>
-							<li><a href="#about-section"><span class="icon-long-arrow-right mr-2"></span>About</a></li>
-							<li><a href="#services-section"><span class="icon-long-arrow-right mr-2"></span>Projects</a>
-							</li>
-							<li><a href="#projects-section"><span class="icon-long-arrow-right mr-2"></span>Drawings</a>
-							</li>
-							<li><a href="#certificate-section"><span
-										class="icon-long-arrow-right mr-2"></span>Certificates</a></li>
-							<li><a href="#contact-section"><span class="icon-long-arrow-right mr-2"></span>Contact</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-md">
-					<div class="ftco-footer-widget mb-4">
-						<h2 class="ftco-heading-2">Projects</h2>
-						<ul class="list-unstyled">
-							<li><a href="https://drive.google.com/open?id=1ZCskQ9eepgM6Minc7eyUpALU2_X725y3"
-									target="_blank"><span class="icon-long-arrow-right mr-2"></span>Web Development</a>
-							</li>
-							<li><a href="https://drive.google.com/open?id=10AzVr1ojCN1gQsFqng3P1AyJrKOLD6BM"
-									target="_blank"><span class="icon-long-arrow-right mr-2"></span>Game Development</a>
-							</li>
-							<li><a href="https://drive.google.com/open?id=1ER0YrbQToM5dpicdbb8aLlMzeksHcAXr"
-									target="_blank"><span class="icon-long-arrow-right mr-2"></span>Graphic Design</a>
-							</li>
-							<li><a href="https://drive.google.com/open?id=1ICd6oqXsAvqPep_j8CVkjQl2UT1JfFLr"
-									target="_blank"><span class="icon-long-arrow-right mr-2"></span>App Developing</a>
-							</li>
-							<li><a href="https://drive.google.com/open?id=1IQh3wAbBBGHW7Y0FIwdQdlB80tjpyEBe"
-									target="_blank"><span class="icon-long-arrow-right mr-2"></span>Drawing</a></li>
-							<li><a href="https://drive.google.com/open?id=1-islgDJrvdaz6CkPeHotuTmdRnU3vcJd"
-									target="_blank"><span class="icon-long-arrow-right mr-2"></span>Character Design</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-md">
-					<div class="ftco-footer-widget mb-4">
-						<h2 class="ftco-heading-2">Have a Questions?</h2>
-						<div class="block-23 mb-3">
-							<ul>
-								<li><span class="icon icon-map-marker"></span><span class="text">Deira, Dubai,
-										UAE</span></li>
-								<li><a href="#"><span class="icon icon-phone"></span><span class="text">+971 52 8310
-											013</span></a></li>
-								<li><a href="#"><span class="icon icon-envelope"></span><span
-											class="text">fatima.dakalbab@gmail.com</span></a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-12 text-center">
-
-					<p>
-						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-						Copyright &copy;
-						<script>document.write(new Date().getFullYear());</script> All rights reserved | This template
-						is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a
-							href="https://colorlib.com" target="_blank">Colorlib and edited by Fatima Dakalbab</a>
-						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-					</p>
-				</div>
-			</div>
-		</div>
-	</footer>
-
-
-
-	<!-- loader -->
-	<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
-			<circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
-			<circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
-				stroke="#F96D00" />
-		</svg></div>
-
-
-	<script src="js/jquery.min.js"></script>
-	<script src="js/jquery-migrate-3.0.1.min.js"></script>
-	<script src="js/popper.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery.easing.1.3.js"></script>
-	<script src="js/jquery.waypoints.min.js"></script>
-	<script src="js/jquery.stellar.min.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/jquery.magnific-popup.min.js"></script>
-	<script src="js/aos.js"></script>
-	<script src="js/jquery.animateNumber.min.js"></script>
-	<script src="js/scrollax.min.js"></script>
-
-	<script src="js/main.js"></script>
-
+// Timeline stagger
+setTimeout(()=>{document.querySelectorAll('.ti').forEach((el,i)=>setTimeout(()=>el.classList.add('visible'),i*140+300))},400);
+</script>
 </body>
-
 </html>
