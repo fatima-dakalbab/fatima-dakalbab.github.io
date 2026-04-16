@@ -596,11 +596,11 @@
     </a>
     <a class="cc cc-link" href="images/certs/certificate_2.jpg" target="_blank" rel="noopener" aria-label="Open IEEE IWCMC certificate image">
       <img class="cc-img" src="images/certs/certificate_2.jpg" alt="IEEE IWCMC presenter certificate" loading="lazy">
-      <div class="cc-body"><div class="ci-label">IEEE IWCMC 2025</div><div class="cn-text">Certificate of Appreciation — ChatGPT for Coding Paper</div><div class="cd-text">May 12–16, 2025 · Abu Dhabi, UAE</div></div>
+      <div class="cc-body"><div class="ci-label">IEEE IWCMC 2025</div><div class="cn-text">Certificate of Presentation — ChatGPT for Coding</div><div class="cd-text">May 12–16, 2025 · Abu Dhabi, UAE</div></div>
     </a>
     <a class="cc cc-link" href="images/certs/certificate_3.jpg" target="_blank" rel="noopener" aria-label="Open IIF 2025 certificate image">
       <img class="cc-img" src="images/certs/certificate_3.jpg" alt="IIF 2025 participation certificate" loading="lazy">
-      <div class="cc-body"><div class="ci-label">University of Sharjah</div><div class="cn-text">Certificate of Participation — IIF-2025 (Presenter)</div><div class="cd-text">April 9–10, 2025</div></div>
+      <div class="cc-body"><div class="ci-label">University of Sharjah</div><div class="cn-text">Certificate of Presentation — IIF-2025</div><div class="cd-text">April 9–10, 2025</div></div>
     </a>
     <a class="cc cc-link" href="images/certs/certificate_4.jpg" target="_blank" rel="noopener" aria-label="Open ICoMTEC certificate image">
       <img class="cc-img" src="images/certs/certificate_4.jpg" alt="ICoMTEC outstanding contribution certificate" loading="lazy">
@@ -608,7 +608,7 @@
     </a>
     <a class="cc cc-link" href="images/certs/certificate_5.jpg" target="_blank" rel="noopener" aria-label="Open IEEE CINS certificate image">
       <img class="cc-img" src="images/certs/certificate_5.jpg" alt="IEEE CINS 2024 speaker certificate" loading="lazy">
-      <div class="cc-body"><div class="ci-label">IEEE CINS 2024 · BITS Pilani Dubai</div><div class="cn-text">Speaker Certificate — Algorithmic Trading in Forex</div><div class="cd-text">November 28–29, 2024 · Dubai, UAE</div></div>
+      <div class="cc-body"><div class="ci-label">IEEE CINS 2024 · BITS Pilani Dubai</div><div class="cn-text">Certificate of Appreciation — Speaker</div><div class="cd-text">November 28–29, 2024 · Dubai, UAE</div></div>
     </a>
     <a class="cc cc-link" href="images/certs/certificate_6.jpg" target="_blank" rel="noopener" aria-label="Open Basic First Aid certificate image">
       <img class="cc-img" src="images/certs/certificate_6.jpg" alt="Basic First Aid completion certificate" loading="lazy">
@@ -616,7 +616,7 @@
     </a>
     <a class="cc cc-link" href="images/certs/certificate_7.jpg" target="_blank" rel="noopener" aria-label="Open MBRSC remote sensing certificate image">
       <img class="cc-img" src="images/certs/certificate_7.jpg" alt="Remote sensing and AI workshop certificate" loading="lazy">
-      <div class="cc-body"><div class="ci-label">ESGRS · Mohammed Bin Rashid Space Centre</div><div class="cn-text">Attendance — Remote Sensing &amp; AI in Marine Studies</div><div class="cd-text">January 29, 2025</div></div>
+      <div class="cc-body"><div class="ci-label">ESGRS · Mohammed Bin Rashid Space Centre</div><div class="cn-text">Certificate of Attendance — Remote Sensing &amp; AI in Marine Studies</div><div class="cd-text">January 29, 2025</div></div>
     </a>
     <a class="cc cc-link" href="images/certs/certificate_8.jpg" target="_blank" rel="noopener" aria-label="Open thesis defense workshop certificate image">
       <img class="cc-img" src="images/certs/certificate_8.jpg" alt="Thesis defense workshop attendance certificate" loading="lazy">
@@ -624,10 +624,9 @@
     </a>
     <a class="cc cc-link" href="images/certs/certificate_9.jpg" target="_blank" rel="noopener" aria-label="Open drone innovation certificate image">
       <img class="cc-img" src="images/certs/certificate_9.jpg" alt="Drone innovation certificate" loading="lazy">
-      <div class="cc-body"><div class="ci-label">University of Sharjah</div><div class="cn-text">Certificate — Drone Innovation: Air Pollution &amp; Climate Research</div><div class="cd-text">March 5, 2025</div></div>
+      <div class="cc-body"><div class="ci-label">University of Sharjah</div><div class="cn-text">Certificate of Participation — Drone Innovation: Air Pollution &amp; Climate Research</div><div class="cd-text">March 5, 2025</div></div>
     </a>
   </div>
-  <p style="margin-top:16px;font-size:12px;color:var(--muted);font-weight:300">Additional official PDFs are available in <code style="color:var(--accent)">images/certs/</code>, including <a href="images/certs/Advanced_Machine_Learning_Python_Course_Fatima.pdf" target="_blank" rel="noopener">Advanced Machine Learning</a> and <a href="images/certs/Mendeley Workshop_Fatima.pdf" target="_blank" rel="noopener">Mendeley Workshop</a>.</p>
 </div></div>
 
 <!-- ═══════════ SLIDESHOW ═══════════ -->
@@ -716,6 +715,7 @@ const App = (() => {
     dots: '#slideDots',
     lightbox: '#lightbox',
     lightboxImg: '#lightboxImg',
+    fdrCanvas: '#fdrCanvas',
     fdrVideo: '#fdrVideo',
     fdrVideoFallback: '#fdrVideoFallback'
   };
@@ -865,6 +865,64 @@ const App = (() => {
     });
   };
 
+  const initFdrAnimation = () => {
+    const canvas = $(SELECTORS.fdrCanvas);
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    const dpr = window.devicePixelRatio || 1;
+    const cssWidth = canvas.width;
+    const cssHeight = canvas.height;
+    canvas.width = Math.floor(cssWidth * dpr);
+    canvas.height = Math.floor(cssHeight * dpr);
+    canvas.style.width = `${cssWidth}px`;
+    canvas.style.height = `${cssHeight}px`;
+    ctx.scale(dpr, dpr);
+
+    let t = 0;
+    const draw = () => {
+      t += 0.03;
+      ctx.clearRect(0, 0, cssWidth, cssHeight);
+
+      const gradient = ctx.createLinearGradient(0, 0, 0, cssHeight);
+      gradient.addColorStop(0, 'rgba(108,99,255,0.24)');
+      gradient.addColorStop(1, 'rgba(0,229,196,0.03)');
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, cssWidth, cssHeight);
+
+      const drawSignal = (offset, amp, color, width) => {
+        ctx.beginPath();
+        for (let x = 0; x <= cssWidth; x += 2) {
+          const noise = Math.sin((x * 0.05) + t + offset) * amp;
+          const burst = Math.sin((x * 0.2) + t * 3 + offset) * (amp * 0.35);
+          const y = cssHeight / 2 + noise + burst;
+          if (x === 0) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        }
+        ctx.strokeStyle = color;
+        ctx.lineWidth = width;
+        ctx.stroke();
+      };
+
+      drawSignal(0, 15, 'rgba(0,229,196,0.9)', 2);
+      drawSignal(1.8, 22, 'rgba(108,99,255,0.7)', 1.5);
+      drawSignal(3.4, 10, 'rgba(255,77,109,0.55)', 1);
+
+      const spikeX = (Math.sin(t * 0.9) * 0.5 + 0.5) * cssWidth;
+      ctx.beginPath();
+      ctx.moveTo(spikeX, cssHeight / 2 - 38);
+      ctx.lineTo(spikeX, cssHeight / 2 + 38);
+      ctx.strokeStyle = 'rgba(255,77,109,0.75)';
+      ctx.lineWidth = 1;
+      ctx.stroke();
+
+      requestAnimationFrame(draw);
+    };
+
+    draw();
+  };
+
   const initSlideshow = () => {
     const slidesEl = $(SELECTORS.slides);
     const dotsEl = $(SELECTORS.dots);
@@ -920,6 +978,7 @@ const App = (() => {
     initCursor();
     initRevealAnimations();
     await initScholar();
+    initFdrAnimation();
     initFdrVideo();
     initSlideshow();
     initLightbox();
