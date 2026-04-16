@@ -234,7 +234,7 @@
   .slide-btn.prev{left:16px}
   .slide-btn.next{right:16px}
   .slide-dots{display:flex;justify-content:center;gap:8px;padding:16px}
-  .dot{width:6px;height:6px;border-radius:50%;background:var(--border);cursor:pointer;transition:all 0.2s}
+  .dot{width:6px;height:6px;border-radius:50%;background:var(--border);cursor:pointer;transition:all 0.2s;border:none;padding:0}
   .dot.active{background:var(--accent);transform:scale(1.4)}
   .slideshow-header{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);padding:20px 28px 0;font-weight:500}
 
@@ -262,6 +262,14 @@
   .lightbox-close{position:fixed;top:24px;right:32px;color:var(--muted);font-size:28px;cursor:pointer;background:none;border:none;transition:color 0.2s;z-index:9001;line-height:1}
   .lightbox-close:hover{color:var(--accent)}
 
+
+  .cc-link{display:block;text-decoration:none;color:inherit}
+  .cc-link:focus-visible,.pc-link:focus-visible,.clink:focus-visible,.btn-primary:focus-visible,.btn-dl:focus-visible,.btn-outline:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  .media-fallback{padding:12px 14px;font-size:12px;color:var(--muted);background:var(--surface2);border-top:1px solid var(--border)}
+  @media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.01ms !important;scroll-behavior:auto !important}
+  }
+
   @media(max-width:960px){
     #hero{grid-template-columns:1fr;padding:120px 24px 60px;gap:40px}
     .about-grid,.di-grid,.ci2{grid-template-columns:1fr}
@@ -276,6 +284,11 @@
     .nav-links{display:none}
     .stat-row{grid-template-columns:1fr 1fr}
     .slides{height:280px}
+  }
+  @media(max-width:640px){
+    .sg,.cdg,.dg{grid-template-columns:1fr}
+    .st{font-size:32px}
+    .ci2{gap:44px}
   }
 </style>
 </head>
@@ -381,10 +394,11 @@
         <!-- VIDEO DEMO — swap the src to your actual video file or YouTube embed -->
         <div class="vid-wrap">
           <!-- Option A: local video file uploaded to your repo -->
-          <video controls preload="none" poster="images/fdr-thumb.jpg">
+          <video controls preload="metadata" poster="images/fdr-thumb.jpg.png" aria-label="FDR project demo video" id="fdrVideo">
             <source src="files/fdr-demo.mp4" type="video/mp4">
             Your browser does not support video.
           </video>
+          <p class="media-fallback" id="fdrVideoFallback" hidden>Demo video is currently unavailable. Please check back later.</p>
           <!-- Option B: YouTube embed — comment out the <video> above and uncomment this:
           <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" allowfullscreen></iframe>
           -->
@@ -406,7 +420,7 @@
           <img class="corisa-img" src="images/corsia/screen2.jpg" alt="CORSIA Screenshot 2" onclick="openLightbox(this.src)" onerror="this.style.display='none'">
           <img class="corisa-img" src="images/corsia/screen3.jpg" alt="CORSIA Screenshot 3" onclick="openLightbox(this.src)" onerror="this.style.display='none'">
         </div>
-        <a href="files/corsia-manual.pdf" target="_blank" class="corisa-pdf">📄 View System Manual PDF ↗</a>
+        <a href="files/corsia-manual.pdf.pdf" target="_blank" class="corisa-pdf">📄 View System Manual PDF ↗</a>
       </div>
     </div>
 
@@ -574,46 +588,46 @@
     </div>
   </div>
 
-  <!-- Certificate cards — add src="images/certs/cert-gcaa.jpg" to cc-img-placeholder once you have images -->
-  <div class="cdg fu">
-    <div class="cc" onclick="openLightbox('images/certs/cert-gcaa.jpg')">
-      <div class="cc-img-placeholder">🏆</div>
+  <!-- Certificate cards -->
+  <div class="cdg fu" aria-label="Certificates gallery">
+    <a class="cc cc-link" href="images/certs/certificate_1.jpg" target="_blank" rel="noopener" aria-label="Open GCAA appreciation certificate image">
+      <img class="cc-img" src="images/certs/certificate_1.jpg" alt="GCAA AI Open Data Ceremony certificate" loading="lazy">
       <div class="cc-body"><div class="ci-label">GCAA · General Civil Aviation Authority</div><div class="cn-text">Certificate of Appreciation — AI Open Data Ceremony</div><div class="cd-text">April 2026 · Abu Dhabi, UAE</div></div>
-    </div>
-    <div class="cc" onclick="openLightbox('images/certs/cert-iwcmc.jpg')">
-      <div class="cc-img-placeholder">📡</div>
+    </a>
+    <a class="cc cc-link" href="images/certs/certificate_2.jpg" target="_blank" rel="noopener" aria-label="Open IEEE IWCMC certificate image">
+      <img class="cc-img" src="images/certs/certificate_2.jpg" alt="IEEE IWCMC presenter certificate" loading="lazy">
       <div class="cc-body"><div class="ci-label">IEEE IWCMC 2025</div><div class="cn-text">Certificate of Appreciation — ChatGPT for Coding Paper</div><div class="cd-text">May 12–16, 2025 · Abu Dhabi, UAE</div></div>
-    </div>
-    <div class="cc" onclick="openLightbox('images/certs/cert-iif.jpg')">
-      <div class="cc-img-placeholder">🎓</div>
+    </a>
+    <a class="cc cc-link" href="images/certs/certificate_3.jpg" target="_blank" rel="noopener" aria-label="Open IIF 2025 certificate image">
+      <img class="cc-img" src="images/certs/certificate_3.jpg" alt="IIF 2025 participation certificate" loading="lazy">
       <div class="cc-body"><div class="ci-label">University of Sharjah</div><div class="cn-text">Certificate of Participation — IIF-2025 (Presenter)</div><div class="cd-text">April 9–10, 2025</div></div>
-    </div>
-    <div class="cc" onclick="openLightbox('images/certs/cert-icomtec.jpg')">
-      <div class="cc-img-placeholder">⭐</div>
+    </a>
+    <a class="cc cc-link" href="images/certs/certificate_4.jpg" target="_blank" rel="noopener" aria-label="Open ICoMTEC certificate image">
+      <img class="cc-img" src="images/certs/certificate_4.jpg" alt="ICoMTEC outstanding contribution certificate" loading="lazy">
       <div class="cc-body"><div class="ci-label">ASTEEC · ICoMTEC 2024</div><div class="cn-text">Outstanding Contribution Award — Cultural Heritage AI Paper</div><div class="cd-text">December 21, 2024 · Yogyakarta</div></div>
-    </div>
-    <div class="cc" onclick="openLightbox('images/certs/cert-cins.jpg')">
-      <div class="cc-img-placeholder">📶</div>
+    </a>
+    <a class="cc cc-link" href="images/certs/certificate_5.jpg" target="_blank" rel="noopener" aria-label="Open IEEE CINS certificate image">
+      <img class="cc-img" src="images/certs/certificate_5.jpg" alt="IEEE CINS 2024 speaker certificate" loading="lazy">
       <div class="cc-body"><div class="ci-label">IEEE CINS 2024 · BITS Pilani Dubai</div><div class="cn-text">Speaker Certificate — Algorithmic Trading in Forex</div><div class="cd-text">November 28–29, 2024 · Dubai, UAE</div></div>
-    </div>
-    <div class="cc" onclick="openLightbox('images/certs/cert-firstaid.jpg')">
-      <div class="cc-img-placeholder">🩺</div>
+    </a>
+    <a class="cc cc-link" href="images/certs/certificate_6.jpg" target="_blank" rel="noopener" aria-label="Open Basic First Aid certificate image">
+      <img class="cc-img" src="images/certs/certificate_6.jpg" alt="Basic First Aid completion certificate" loading="lazy">
       <div class="cc-body"><div class="ci-label">HSI · Health &amp; Safety Institute</div><div class="cn-text">Record of Completion — Basic First Aid (Score: 100%)</div><div class="cd-text">March 26, 2025</div></div>
-    </div>
-    <div class="cc" onclick="openLightbox('images/certs/cert-mbrsc.jpg')">
-      <div class="cc-img-placeholder">🛰</div>
+    </a>
+    <a class="cc cc-link" href="images/certs/certificate_7.jpg" target="_blank" rel="noopener" aria-label="Open MBRSC remote sensing certificate image">
+      <img class="cc-img" src="images/certs/certificate_7.jpg" alt="Remote sensing and AI workshop certificate" loading="lazy">
       <div class="cc-body"><div class="ci-label">ESGRS · Mohammed Bin Rashid Space Centre</div><div class="cn-text">Attendance — Remote Sensing &amp; AI in Marine Studies</div><div class="cd-text">January 29, 2025</div></div>
-    </div>
-    <div class="cc" onclick="openLightbox('images/certs/cert-thesis.jpg')">
-      <div class="cc-img-placeholder">📋</div>
+    </a>
+    <a class="cc cc-link" href="images/certs/certificate_8.jpg" target="_blank" rel="noopener" aria-label="Open thesis defense workshop certificate image">
+      <img class="cc-img" src="images/certs/certificate_8.jpg" alt="Thesis defense workshop attendance certificate" loading="lazy">
       <div class="cc-body"><div class="ci-label">University of Sharjah · Graduate Studies</div><div class="cn-text">Certificate of Attendance — Thesis Defense Workshop</div><div class="cd-text">November 10, 2024</div></div>
-    </div>
-    <div class="cc" onclick="openLightbox('images/certs/cert-drone.jpg')">
-      <div class="cc-img-placeholder">🚁</div>
+    </a>
+    <a class="cc cc-link" href="images/certs/certificate_9.jpg" target="_blank" rel="noopener" aria-label="Open drone innovation certificate image">
+      <img class="cc-img" src="images/certs/certificate_9.jpg" alt="Drone innovation certificate" loading="lazy">
       <div class="cc-body"><div class="ci-label">University of Sharjah</div><div class="cn-text">Certificate — Drone Innovation: Air Pollution &amp; Climate Research</div><div class="cd-text">March 5, 2025</div></div>
-    </div>
+    </a>
   </div>
-  <p style="margin-top:16px;font-size:12px;color:var(--muted);font-weight:300">💡 Add your certificate images to <code style="color:var(--accent)">images/certs/</code> and replace the emoji placeholders with <code style="color:var(--accent)">&lt;img class="cc-img" src="images/certs/cert-gcaa.jpg"&gt;</code></p>
+  <p style="margin-top:16px;font-size:12px;color:var(--muted);font-weight:300">Additional official PDFs are available in <code style="color:var(--accent)">images/certs/</code>, including <a href="images/certs/Advanced_Machine_Learning_Python_Course_Fatima.pdf" target="_blank" rel="noopener">Advanced Machine Learning</a> and <a href="images/certs/Mendeley Workshop_Fatima.pdf" target="_blank" rel="noopener">Mendeley Workshop</a>.</p>
 </div></div>
 
 <!-- ═══════════ SLIDESHOW ═══════════ -->
@@ -624,10 +638,7 @@
     <div class="slides" id="slides">
       <!-- Add your real photos: <img src="images/talks/talk1.jpg" alt="..."> inside each .slide -->
       <div class="slide">
-        <div class="slide-placeholder">
-          <div style="font-size:40px">🎤</div>
-          <div>Add your event photos to <code style="color:var(--accent)">images/talks/</code></div>
-        </div>
+        <img src="images/talks/GCAA AI Open Data Ceremony.jpg" alt="Fatima Dakalbab presenting at the GCAA AI Open Data Ceremony in Abu Dhabi" loading="lazy">
         <div class="slide-caption"><strong>GCAA AI Open Data Ceremony</strong> · Abu Dhabi, April 2026 — Presenting aviation AI research to GCAA Director General</div>
       </div>
       <div class="slide">
@@ -663,7 +674,7 @@
     <button class="slide-btn next" onclick="moveSlide(1)">›</button>
     <div class="slide-dots" id="slideDots"></div>
   </div>
-  <p style="margin-top:14px;font-size:12px;color:var(--muted);font-weight:300">💡 To add real photos: inside each <code style="color:var(--accent)">.slide</code> div, replace the <code style="color:var(--accent)">.slide-placeholder</code> with <code style="color:var(--accent)">&lt;img src="images/talks/photo.jpg" alt="..."&gt;</code></p>
+  <p style="margin-top:14px;font-size:12px;color:var(--muted);font-weight:300">💡 First slide now uses your available event photo. You can replace remaining placeholders in <code style="color:var(--accent)">images/talks/</code> the same way</p>
 </div></section>
 
 <!-- ═══════════ CONTACT ═══════════ -->
@@ -690,107 +701,234 @@
 </footer>
 
 <script>
-// ── Cursor ──
-const cursor=document.getElementById('cursor'),ring=document.getElementById('cursorRing');
-let mx=0,my=0,rx=0,ry=0;
-document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cursor.style.left=mx-5+'px';cursor.style.top=my-5+'px'});
-(function ar(){rx+=(mx-rx)*0.12;ry+=(my-ry)*0.12;ring.style.left=rx-17+'px';ring.style.top=ry-17+'px';requestAnimationFrame(ar)})();
-document.querySelectorAll('a,button,.pc,.cc,.skc,.di').forEach(el=>{
-  el.addEventListener('mouseenter',()=>{cursor.style.transform='scale(2.2)';ring.style.transform='scale(1.5)';ring.style.opacity='0.7'});
-  el.addEventListener('mouseleave',()=>{cursor.style.transform='scale(1)';ring.style.transform='scale(1)';ring.style.opacity='0.35'});
-});
+const App = (() => {
+  const SELECTORS = {
+    cursor: '#cursor',
+    cursorRing: '#cursorRing',
+    scholarCard: '.scholar-card',
+    cite: '#citeN',
+    hindex: '#hindexN',
+    i10: '#i10N',
+    chart: '#citChart',
+    timelineItems: '.ti',
+    revealItems: '.fu,.ti',
+    slides: '#slides',
+    dots: '#slideDots',
+    lightbox: '#lightbox',
+    lightboxImg: '#lightboxImg',
+    fdrVideo: '#fdrVideo',
+    fdrVideoFallback: '#fdrVideoFallback'
+  };
 
-// ── Scroll animations ──
-const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')}),{threshold:0.08});
-document.querySelectorAll('.fu,.ti').forEach(el=>obs.observe(el));
-setTimeout(()=>{document.querySelectorAll('.ti').forEach((el,i)=>setTimeout(()=>el.classList.add('visible'),i*140+300))},400);
+  const fallbackScholarData = {
+    citations: 1845,
+    hindex: 8,
+    i10: 8,
+    trend: [8,22,68,130,178,220,217],
+    years: [2019,2020,2021,2022,2023,2024,2025]
+  };
 
-// ── Google Scholar live fetch ──
-// Since Scholar blocks direct fetches, we show the best available numbers
-// and link directly so visitors can see live stats themselves.
-// To keep numbers accurate, update the values below when you check your profile.
-const scholarData = { citations: 1845, hindex: 8, i10: 8 };
-function countUp(el,target,dur=1800){
-  if(!el)return;
-  let s=0;
-  const fn=ts=>{if(!s)s=ts;const p=Math.min((ts-s)/dur,1);el.textContent=Math.floor(p*target);p<1?requestAnimationFrame(fn):el.textContent=target+'+'};
-  requestAnimationFrame(fn);
-}
-const sObs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){
-  countUp(document.getElementById('citeN'),scholarData.citations,2000);
-  document.getElementById('hindexN').textContent=scholarData.hindex;
-  document.getElementById('i10N').textContent=scholarData.i10;
-  sObs.disconnect();
-}})},{threshold:0.3});
-const sc=document.querySelector('.scholar-card');
-if(sc)sObs.observe(sc);
+  const state = { slideIndex: 0, slideTimer: null };
 
-// ── Citation bar chart ──
-const vals=[8,22,68,130,178,220,217],years=[2019,2020,2021,2022,2023,2024,2025];
-const maxV=Math.max(...vals),ch=document.getElementById('citChart');
-if(ch){vals.forEach((v,i)=>{const b=document.createElement('div');b.className='bar';b.style.height=Math.round(v/maxV*100)+'%';b.title=`${years[i]}: ~${v} citations`;ch.appendChild(b)})}
+  const $ = (selector) => document.querySelector(selector);
+  const $$ = (selector) => Array.from(document.querySelectorAll(selector));
 
-// ── FDR Canvas ──
-const cv=document.getElementById('fdrCanvas');
-if(cv){
-  cv.width=380;cv.height=160;
-  const ctx=cv.getContext('2d'),W=cv.width,H=cv.height;let t=0;
-  const lines=[{c:'#00e5c4',a:28,f:0.022,ph:0,b:0.42},{c:'#6c63ff',a:18,f:0.038,ph:1.2,b:0.6},{c:'#ff4d6d',a:12,f:0.056,ph:2.1,b:0.75}];
-  function d(){
-    ctx.clearRect(0,0,W,H);
-    ctx.strokeStyle='rgba(0,229,196,0.05)';ctx.lineWidth=1;
-    for(let x=0;x<W;x+=40){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke()}
-    for(let y=0;y<H;y+=25){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke()}
-    lines.forEach(l=>{ctx.beginPath();ctx.strokeStyle=l.c;ctx.lineWidth=1.5;ctx.globalAlpha=0.65;
-      for(let x=0;x<W;x++){const n=(Math.random()-0.5)*1.2,y=H*l.b+Math.sin((x+t)*l.f+l.ph)*l.a+Math.sin((x+t)*l.f*2.4)*l.a*0.25+n;x===0?ctx.moveTo(x,y):ctx.lineTo(x,y)}ctx.stroke()});
-    const ax=(Math.sin(t*0.008)*0.15+0.72)*W;
-    ctx.globalAlpha=0.9;ctx.strokeStyle='#ff4d6d';ctx.lineWidth=1;ctx.setLineDash([4,3]);
-    ctx.beginPath();ctx.moveTo(ax,0);ctx.lineTo(ax,H);ctx.stroke();ctx.setLineDash([]);
-    ctx.fillStyle='#ff4d6d';ctx.font='9px DM Sans,sans-serif';ctx.fillText('⚠ ANOMALY',ax+4,14);
-    ctx.globalAlpha=1;t+=0.7;requestAnimationFrame(d)
-  }
-  d();
-}
+  const initCursor = () => {
+    const cursor = $(SELECTORS.cursor);
+    const ring = $(SELECTORS.cursorRing);
+    if (!cursor || !ring) return;
 
-// ── Slideshow ──
-let curSlide=0;
-const slidesEl=document.getElementById('slides');
-const allSlides=slidesEl?slidesEl.querySelectorAll('.slide'):[];
-const dotsEl=document.getElementById('slideDots');
-function buildDots(){
-  if(!dotsEl)return;
-  allSlides.forEach((_,i)=>{
-    const d=document.createElement('div');
-    d.className='dot'+(i===0?' active':'');
-    d.onclick=()=>goSlide(i);
-    dotsEl.appendChild(d);
-  });
-}
-function goSlide(n){
-  curSlide=(n+allSlides.length)%allSlides.length;
-  if(slidesEl)slidesEl.style.transform=`translateX(-${curSlide*100}%)`;
-  document.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('active',i===curSlide));
-}
-function moveSlide(dir){goSlide(curSlide+dir)}
-buildDots();
-// Auto-advance
-setInterval(()=>moveSlide(1),5000);
+    let mx = 0, my = 0, rx = 0, ry = 0;
+    document.addEventListener('mousemove', (e) => {
+      mx = e.clientX;
+      my = e.clientY;
+      cursor.style.left = `${mx - 5}px`;
+      cursor.style.top = `${my - 5}px`;
+    });
 
-// ── Lightbox ──
-function openLightbox(src){
-  const lb=document.getElementById('lightbox'),img=document.getElementById('lightboxImg');
-  // Only open if image actually exists (graceful fallback)
-  img.src=src;
-  lb.classList.add('open');
-}
-function closeLightbox(){
-  document.getElementById('lightbox').classList.remove('open');
-  document.getElementById('lightboxImg').src='';
-}
-document.getElementById('lightbox').addEventListener('click',function(e){
-  if(e.target===this)closeLightbox();
-});
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox()});
+    const animateRing = () => {
+      rx += (mx - rx) * 0.12;
+      ry += (my - ry) * 0.12;
+      ring.style.left = `${rx - 17}px`;
+      ring.style.top = `${ry - 17}px`;
+      requestAnimationFrame(animateRing);
+    };
+    animateRing();
+
+    $$('a,button,.pc,.cc,.skc,.di').forEach((el) => {
+      el.addEventListener('mouseenter', () => {
+        cursor.style.transform = 'scale(2.2)';
+        ring.style.transform = 'scale(1.5)';
+        ring.style.opacity = '0.7';
+      });
+      el.addEventListener('mouseleave', () => {
+        cursor.style.transform = 'scale(1)';
+        ring.style.transform = 'scale(1)';
+        ring.style.opacity = '0.35';
+      });
+    });
+  };
+
+  const initRevealAnimations = () => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.08 });
+
+    $$(SELECTORS.revealItems).forEach((el) => observer.observe(el));
+    setTimeout(() => {
+      $$(SELECTORS.timelineItems).forEach((el, i) => {
+        setTimeout(() => el.classList.add('visible'), i * 140 + 300);
+      });
+    }, 400);
+  };
+
+  const countUp = (el, target, duration = 1800, suffix = '') => {
+    if (!el) return;
+    let start = 0;
+    const animate = (ts) => {
+      if (!start) start = ts;
+      const progress = Math.min((ts - start) / duration, 1);
+      el.textContent = `${Math.floor(progress * target)}${suffix}`;
+      if (progress < 1) requestAnimationFrame(animate);
+    };
+    requestAnimationFrame(animate);
+  };
+
+  const renderScholarChart = (values, years) => {
+    const chart = $(SELECTORS.chart);
+    if (!chart) return;
+    chart.innerHTML = '';
+    const maxV = Math.max(...values, 1);
+    values.forEach((value, i) => {
+      const bar = document.createElement('div');
+      bar.className = 'bar';
+      bar.style.height = `${Math.round((value / maxV) * 100)}%`;
+      bar.title = `${years[i]}: ~${value} citations`;
+      chart.appendChild(bar);
+    });
+  };
+
+  const loadScholarData = async () => {
+    const cacheBuster = `v=${Date.now()}`;
+    try {
+      const response = await fetch(`./data/scholar.json?${cacheBuster}`, { cache: 'no-store' });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const data = await response.json();
+      return {
+        citations: Number(data.citations) || fallbackScholarData.citations,
+        hindex: Number(data.hindex) || fallbackScholarData.hindex,
+        i10: Number(data.i10) || fallbackScholarData.i10,
+        trend: Array.isArray(data.trend) && data.trend.length ? data.trend : fallbackScholarData.trend,
+        years: Array.isArray(data.years) && data.years.length === (data.trend || []).length ? data.years : fallbackScholarData.years
+      };
+    } catch (error) {
+      console.warn('Using fallback scholar data:', error);
+      return fallbackScholarData;
+    }
+  };
+
+  const initScholar = async () => {
+    const card = $(SELECTORS.scholarCard);
+    if (!card) return;
+
+    const scholarData = await loadScholarData();
+    renderScholarChart(scholarData.trend, scholarData.years);
+
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        countUp($(SELECTORS.cite), scholarData.citations, 2000, '+');
+        countUp($(SELECTORS.hindex), scholarData.hindex, 1500);
+        countUp($(SELECTORS.i10), scholarData.i10, 1500);
+        obs.disconnect();
+      });
+    }, { threshold: 0.35 });
+
+    observer.observe(card);
+  };
+
+  const initFdrVideo = () => {
+    const video = $(SELECTORS.fdrVideo);
+    const fallback = $(SELECTORS.fdrVideoFallback);
+    if (!video || !fallback) return;
+    video.addEventListener('error', () => {
+      fallback.hidden = false;
+      video.hidden = true;
+    });
+    video.querySelectorAll('source').forEach((source) => {
+      source.addEventListener('error', () => {
+        fallback.hidden = false;
+        video.hidden = true;
+      });
+    });
+  };
+
+  const initSlideshow = () => {
+    const slidesEl = $(SELECTORS.slides);
+    const dotsEl = $(SELECTORS.dots);
+    if (!slidesEl || !dotsEl) return;
+
+    const allSlides = slidesEl.querySelectorAll('.slide');
+    if (!allSlides.length) return;
+
+    const goSlide = (n) => {
+      state.slideIndex = (n + allSlides.length) % allSlides.length;
+      slidesEl.style.transform = `translateX(-${state.slideIndex * 100}%)`;
+      $$('.dot').forEach((dot, i) => dot.classList.toggle('active', i === state.slideIndex));
+    };
+
+    allSlides.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = `dot${i === 0 ? ' active' : ''}`;
+      dot.type = 'button';
+      dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+      dot.addEventListener('click', () => goSlide(i));
+      dotsEl.appendChild(dot);
+    });
+
+    window.moveSlide = (dir) => goSlide(state.slideIndex + dir);
+    state.slideTimer = setInterval(() => window.moveSlide(1), 5000);
+  };
+
+  const initLightbox = () => {
+    const lightbox = $(SELECTORS.lightbox);
+    const lightboxImg = $(SELECTORS.lightboxImg);
+    if (!lightbox || !lightboxImg) return;
+
+    window.openLightbox = (src) => {
+      lightboxImg.src = src;
+      lightbox.classList.add('open');
+    };
+
+    window.closeLightbox = () => {
+      lightbox.classList.remove('open');
+      lightboxImg.src = '';
+    };
+
+    lightbox.addEventListener('click', (event) => {
+      if (event.target === lightbox) window.closeLightbox();
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') window.closeLightbox();
+    });
+  };
+
+  const init = async () => {
+    initCursor();
+    initRevealAnimations();
+    await initScholar();
+    initFdrVideo();
+    initSlideshow();
+    initLightbox();
+  };
+
+  return { init };
+})();
+
+document.addEventListener('DOMContentLoaded', App.init);
 </script>
 </body>
 </html>
