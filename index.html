@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fatima Dakalbab — AI Researcher & Designer</title>
+<title>Fatima Dakalbab | AI Researcher & Designer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #060810;
@@ -21,14 +21,14 @@
   }
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.75;overflow-x:hidden}
+  body{background:var(--bg);color:var(--text);font-family:'Outfit',sans-serif;font-size:15px;line-height:1.75;overflow-x:hidden}
   body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");pointer-events:none;z-index:1;opacity:0.35}
   .cursor{width:10px;height:10px;background:var(--accent);border-radius:50%;position:fixed;pointer-events:none;z-index:9999;transition:transform 0.1s ease;mix-blend-mode:screen}
   .cursor-ring{width:34px;height:34px;border:1px solid var(--accent);border-radius:50%;position:fixed;pointer-events:none;z-index:9998;transition:all 0.15s ease;opacity:0.35}
 
   /* NAV */
   nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 60px;display:flex;justify-content:space-between;align-items:center;background:linear-gradient(to bottom,rgba(6,8,16,0.97) 0%,transparent 100%);backdrop-filter:blur(4px)}
-  .nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:17px;color:var(--accent);letter-spacing:1px}
+  .nav-logo{font-family:'Outfit',sans-serif;font-weight:800;font-size:17px;color:var(--accent);letter-spacing:1px}
   .nav-links{display:flex;gap:36px;list-style:none}
   .nav-links a{color:var(--muted);text-decoration:none;font-size:12px;letter-spacing:0.15em;text-transform:uppercase;transition:color 0.2s;font-weight:500}
   .nav-links a:hover{color:var(--accent)}
@@ -46,7 +46,7 @@
   .hero-eyebrow::before{content:'';width:36px;height:1px;background:var(--accent)}
   .blink{display:inline-block;width:8px;height:8px;background:var(--accent2);border-radius:50%;animation:blink 1.5s ease-in-out infinite}
   @keyframes blink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.3;transform:scale(0.6)}}
-  .hero-name{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(52px,6.5vw,96px);line-height:0.92;letter-spacing:-3px;margin-bottom:12px}
+  .hero-name{font-family:'Outfit',sans-serif;font-weight:800;font-size:clamp(52px,6.5vw,96px);line-height:0.9;letter-spacing:-2px;margin-bottom:12px}
   .hero-name .first{color:var(--text)}
   .hero-name .last{display:block;color:transparent;-webkit-text-stroke:1.5px var(--accent);background:linear-gradient(90deg,var(--accent),var(--accent3));-webkit-background-clip:text;background-clip:text}
   .hero-dual-role{display:flex;gap:12px;margin:26px 0 30px;flex-wrap:wrap}
@@ -56,11 +56,11 @@
   .hero-bio{color:var(--muted);font-size:14.5px;max-width:460px;line-height:2;margin-bottom:38px;font-weight:300}
   .hero-bio strong{color:var(--accent);font-weight:500}
   .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
-  .btn-primary{background:var(--accent);color:var(--bg);border:none;padding:14px 28px;font-family:'DM Sans',sans-serif;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;text-decoration:none;transition:all 0.2s;display:inline-block;font-weight:600;clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,8px 100%,0 calc(100% - 8px))}
+  .btn-primary{background:var(--accent);color:var(--bg);border:none;padding:14px 28px;font-family:'Outfit',sans-serif;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;text-decoration:none;transition:all 0.2s;display:inline-block;font-weight:600;clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,8px 100%,0 calc(100% - 8px))}
   .btn-primary:hover{background:#00ffda;box-shadow:0 0 28px rgba(0,229,196,0.4);transform:translateY(-2px)}
-  .btn-outline{background:transparent;color:var(--text);border:1px solid var(--border);padding:14px 28px;font-family:'DM Sans',sans-serif;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;text-decoration:none;transition:all 0.2s;display:inline-block;font-weight:500}
+  .btn-outline{background:transparent;color:var(--text);border:1px solid var(--border);padding:14px 28px;font-family:'Outfit',sans-serif;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;text-decoration:none;transition:all 0.2s;display:inline-block;font-weight:500}
   .btn-outline:hover{border-color:var(--accent);color:var(--accent)}
-  .btn-dl{background:rgba(0,229,196,0.1);color:var(--accent);border:1px solid rgba(0,229,196,0.3);padding:14px 28px;font-family:'DM Sans',sans-serif;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;text-decoration:none;transition:all 0.2s;display:inline-flex;align-items:center;gap:10px;font-weight:500}
+  .btn-dl{background:rgba(0,229,196,0.1);color:var(--accent);border:1px solid rgba(0,229,196,0.3);padding:14px 28px;font-family:'Outfit',sans-serif;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;text-decoration:none;transition:all 0.2s;display:inline-flex;align-items:center;gap:10px;font-weight:500}
   .btn-dl:hover{background:rgba(0,229,196,0.18);border-color:var(--accent)}
 
   /* SCHOLAR CARD */
@@ -70,13 +70,13 @@
   .scholar-header{display:flex;align-items:center;gap:14px;margin-bottom:22px}
   .scholar-icon{width:38px;height:38px;background:linear-gradient(135deg,var(--accent),var(--accent3));display:flex;align-items:center;justify-content:center;font-size:18px;clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%)}
   .scholar-label{font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted)}
-  .scholar-name{font-family:'Syne',sans-serif;font-size:14px;font-weight:700}
+  .scholar-name{font-family:'Outfit',sans-serif;font-size:14px;font-weight:700}
   .scholar-live{font-size:9px;color:var(--accent);letter-spacing:0.1em;display:flex;align-items:center;gap:5px;margin-bottom:18px;opacity:0.8}
   .scholar-live::before{content:'';width:6px;height:6px;background:var(--accent);border-radius:50%;animation:blink 2s ease-in-out infinite}
   .scholar-metrics{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--border)}
   .metric-cell{padding:16px 10px;text-align:center;border-right:1px solid var(--border)}
   .metric-cell:last-child{border-right:none}
-  .metric-value{font-family:'Syne',sans-serif;font-size:28px;font-weight:800;line-height:1;color:var(--accent);display:block;margin-bottom:4px}
+  .metric-value{font-family:'Outfit',sans-serif;font-size:28px;font-weight:800;line-height:1;color:var(--accent);display:block;margin-bottom:4px}
   .metric-cell:nth-child(2) .metric-value{color:var(--accent2)}
   .metric-cell:nth-child(3) .metric-value{color:var(--accent3)}
   .metric-key{font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);display:block}
@@ -89,7 +89,7 @@
   .stat-mini:hover{border-color:var(--accent3)}
   .stat-mini::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--accent3);transform:scaleX(0);transform-origin:left;transition:transform 0.3s}
   .stat-mini:hover::after{transform:scaleX(1)}
-  .stat-mini-num{font-family:'Syne',sans-serif;font-size:26px;font-weight:800;color:var(--accent3);line-height:1;display:block}
+  .stat-mini-num{font-family:'Outfit',sans-serif;font-size:26px;font-weight:800;color:var(--accent3);line-height:1;display:block}
   .stat-mini-label{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-top:4px;display:block;font-weight:400}
 
   /* SECTIONS */
@@ -98,7 +98,7 @@
   .swf>.inner{max-width:1320px;margin:0 auto}
   .sh{display:flex;align-items:baseline;gap:16px;margin-bottom:60px}
   .sn{font-size:10px;color:var(--accent);letter-spacing:0.25em;font-weight:500}
-  .st{font-family:'Syne',sans-serif;font-weight:800;font-size:40px;letter-spacing:-1.5px;line-height:1}
+  .st{font-family:'Outfit',sans-serif;font-weight:800;font-size:40px;letter-spacing:-1px;line-height:1}
   .sl{flex:1;height:1px;background:var(--border);margin-left:16px}
 
   /* ABOUT */
@@ -112,31 +112,46 @@
   .ti.visible{opacity:1;transform:translateX(0)}
   .ti::before{content:'';position:absolute;left:-32px;top:6px;width:7px;height:7px;border-radius:50%;background:var(--accent);border:2px solid var(--bg);box-shadow:0 0 8px var(--accent)}
   .ty{font-size:10px;color:var(--accent);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:4px;font-weight:500}
-  .tr{font-family:'Syne',sans-serif;font-weight:700;font-size:16px;margin-bottom:3px}
+  .tr{font-family:'Outfit',sans-serif;font-weight:700;font-size:16px;margin-bottom:3px}
   .to{font-size:12px;color:var(--muted);margin-bottom:8px;font-weight:400}
   .td{font-size:13px;color:var(--muted);line-height:1.8;font-weight:300}
 
   /* PROJECTS */
   .pg{display:grid;grid-template-columns:repeat(2,1fr);gap:3px}
   .pc{background:var(--surface);border:1px solid var(--border);padding:40px;position:relative;overflow:hidden;transition:all 0.3s ease}
-  .pc::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,229,196,0.04) 0%,transparent 60%);opacity:0;transition:opacity 0.3s}
+  .pc::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,229,196,0.04) 0%,transparent 60%);opacity:0;transition:opacity 0.3s;pointer-events:none}
   .pc:hover{border-color:var(--accent)}
   .pc:hover::after{opacity:1}
   .pc:nth-child(3):hover{border-color:var(--accent2)}
-  .pc-tag{display:inline-block;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);background:rgba(0,229,196,0.08);border:1px solid rgba(0,229,196,0.2);padding:5px 11px;margin-bottom:20px;font-weight:500}
+  .pc-tag{display:inline-block;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);background:rgba(0,229,196,0.08);border:1px solid rgba(0,229,196,0.2);padding:5px 11px;margin-bottom:20px;font-weight:600}
   .pc:nth-child(3) .pc-tag{color:var(--accent2);background:rgba(255,77,109,0.08);border-color:rgba(255,77,109,0.2)}
   .pc:nth-child(2) .pc-tag{color:var(--accent3);background:rgba(108,99,255,0.08);border-color:rgba(108,99,255,0.2)}
-  .pc-title{font-family:'Syne',sans-serif;font-weight:700;font-size:22px;line-height:1.2;margin-bottom:16px;letter-spacing:-0.5px}
+  .pc-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:22px;line-height:1.2;margin-bottom:16px;letter-spacing:-0.5px}
   .pc-desc{color:var(--muted);font-size:13.5px;line-height:1.9;margin-bottom:24px;font-weight:300}
   .pc-desc strong{color:var(--accent);font-weight:500}
-  .pc-links{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px}
-  .pc-link{font-size:10px;color:var(--accent3);border:1px solid rgba(108,99,255,0.3);padding:4px 10px;text-decoration:none;transition:all 0.2s;letter-spacing:0.05em}
-  .pc-link:hover{background:rgba(108,99,255,0.1);color:var(--accent)}
-  .pc-stack{display:flex;gap:7px;flex-wrap:wrap}
+  .pc-links{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px;position:relative;z-index:2}
+  .pc-link{font-size:11px;color:var(--accent3);border:1px solid rgba(108,99,255,0.35);padding:7px 16px;text-decoration:none;transition:all 0.2s;letter-spacing:0.04em;font-weight:500;display:inline-block}
+  .pc-link:hover{background:rgba(108,99,255,0.18);color:var(--accent);border-color:var(--accent);transform:translateY(-1px)}
+  .pc-stack{display:flex;gap:7px;flex-wrap:wrap;position:relative;z-index:1}
   .st-tag{font-size:11px;color:var(--muted);background:var(--tag-bg);padding:4px 9px;border:1px solid var(--border);font-weight:400}
   .pc.feat{grid-column:span 2;display:grid;grid-template-columns:1fr 1fr;gap:40px}
   .pc.featw{grid-column:span 2}
-  .pv{background:linear-gradient(135deg,#0d0f1a,#080a14);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;min-height:200px;overflow:hidden}
+  .pv{background:linear-gradient(135deg,#0d0f1a,#080a14);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;min-height:200px;overflow:hidden;position:relative}
+
+  /* VIDEO PLAYER */
+  .vid-wrap{position:relative;width:100%;background:#000;border:1px solid var(--border);overflow:hidden}
+  .vid-wrap video{width:100%;display:block;max-height:280px;object-fit:cover}
+  .vid-wrap iframe{width:100%;height:280px;border:none;display:block}
+  .vid-label{display:flex;align-items:center;gap:10px;padding:10px 16px;background:rgba(0,0,0,0.6);font-size:11px;color:var(--muted);border-top:1px solid var(--border);font-weight:400}
+  .vid-label::before{content:'▶';color:var(--accent);font-size:10px}
+
+  /* CORISA MEDIA — image strip + PDF */
+  .corisa-media{margin-top:20px;position:relative;z-index:1}
+  .corisa-imgs{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:10px}
+  .corisa-img{aspect-ratio:4/3;object-fit:cover;width:100%;cursor:pointer;border:1px solid var(--border);transition:all 0.2s;display:block;background:var(--surface2)}
+  .corisa-img:hover{border-color:var(--accent2);transform:scale(1.02)}
+  .corisa-pdf{display:inline-flex;align-items:center;gap:8px;font-size:11px;color:var(--accent2);border:1px solid rgba(255,77,109,0.3);padding:7px 14px;text-decoration:none;transition:all 0.2s;font-weight:500}
+  .corisa-pdf:hover{background:rgba(255,77,109,0.1);border-color:var(--accent2)}
 
   /* PUBLICATIONS */
   .pl{border:1px solid var(--border)}
@@ -203,7 +218,7 @@
   .cc-img-placeholder{width:100%;aspect-ratio:4/3;background:var(--surface2);display:flex;align-items:center;justify-content:center;font-size:24px}
   .cc-body{padding:16px 18px}
   .ci-label{font-size:9px;color:var(--accent);letter-spacing:0.18em;text-transform:uppercase;margin-bottom:6px;font-weight:500}
-  .cn-text{font-family:'Syne',sans-serif;font-weight:700;font-size:13px;line-height:1.3;margin-bottom:6px}
+  .cn-text{font-family:'Outfit',sans-serif;font-weight:700;font-size:13px;line-height:1.3;margin-bottom:6px}
   .cd-text{font-size:11px;color:var(--muted);font-weight:300}
 
   /* SLIDESHOW */
@@ -226,7 +241,7 @@
   /* CONTACT */
   .cs{background:var(--surface);padding:100px 60px}
   .ci2{max-width:1320px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
-  .ch{font-family:'Syne',sans-serif;font-weight:800;font-size:54px;letter-spacing:-2px;line-height:0.95;margin-bottom:18px}
+  .ch{font-family:'Outfit',sans-serif;font-weight:800;font-size:54px;letter-spacing:-2px;line-height:0.95;margin-bottom:18px}
   .ch span{display:block;color:transparent;-webkit-text-stroke:1.5px var(--accent)}
   .csub{color:var(--muted);font-size:14px;line-height:1.9;max-width:380px;font-weight:300;margin-bottom:28px}
   .clinks{display:flex;flex-direction:column;gap:10px}
@@ -316,7 +331,7 @@
         <div class="metric-cell"><span class="metric-value" id="i10N">…</span><span class="metric-key">i10-index</span></div>
       </div>
       <div class="scholar-chart" id="citChart"></div>
-      <div class="scholar-chart-label">Citation growth by year</div>
+      <div class="scholar-chart-label">Citation growth by year →</div>
     </div>
     <div class="stat-row">
       <div class="stat-mini"><span class="stat-mini-num">19+</span><span class="stat-mini-label">Publications</span></div>
@@ -338,9 +353,9 @@
       <p>Beyond research, I'm a <em>graphic designer and visual communicator</em> who has created campaigns for Dubai Police, aviation research brochures, event materials, and animated awareness videos across multiple organizations. I also actively <strong>mentor research assistants and interns</strong>, having guided 53+ individuals through research projects.</p>
     </div>
     <div class="timeline">
-      <div class="ti"><div class="ty">2024 — 2025</div><div class="tr">M.Sc. Computer Science</div><div class="to">University of Sharjah · 3.76 CGPA</div><div class="td">AI, ML, NLP &amp; FinTech. Thesis on Multimodal Deep Learning for Forex Prediction using Attention Mechanisms.</div></div>
-      <div class="ti"><div class="ty">2013 — Present</div><div class="tr">Research Assistant</div><div class="to">Aviation Center of Excellence, UOS</div><div class="td">AI/LLM research for aviation, RPA automation, front-end dashboards, cybersecurity analysis, event branding and design collateral. Mentored 53+ research assistants and interns across 4 academic years.</div></div>
-      <div class="ti"><div class="ty">2017 — 2023</div><div class="tr">Research Assistant</div><div class="to">OpenUAE R&D Group, UOS</div><div class="td">Multimodal deep learning for Forex, published on LLMs, blockchain security and AI in finance. Designed academic posters, slide decks and reports.</div></div>
+      <div class="ti"><div class="ty">2021 — 2024</div><div class="tr">M.Sc. Computer Science</div><div class="to">University of Sharjah · 3.76 CGPA</div><div class="td">AI, ML, NLP &amp; FinTech. Thesis on Multimodal Deep Learning for Forex Prediction using Attention Mechanisms.</div></div>
+      <div class="ti"><div class="ty">2022 — Present</div><div class="tr">Research Assistant</div><div class="to">Aviation Center of Excellence, UOS</div><div class="td">AI/LLM research for aviation, RPA automation, front-end dashboards, cybersecurity analysis, event branding and design collateral. Mentored 53+ research assistants and interns across 4 academic years.</div></div>
+      <div class="ti"><div class="ty">2017 — 2022</div><div class="tr">Research Assistant</div><div class="to">OpenUAE R&D Group, UOS</div><div class="td">Multimodal deep learning for Forex, published on LLMs, blockchain security and AI in finance. Designed academic posters, slide decks and reports.</div></div>
       <div class="ti"><div class="ty">2020 — 2021</div><div class="tr">Graphic Designer</div><div class="to">Dubai Police</div><div class="td">Branding, animated cybersecurity awareness videos, COVID-19 campaigns, social media and print collateral.</div></div>
       <div class="ti"><div class="ty">2016 — 2020</div><div class="tr">B.Sc. IT &amp; Multimedia</div><div class="to">University of Sharjah · 3.92 CGPA</div><div class="td">Database Systems, Web &amp; Mobile Dev, Multimedia Technologies. Tutored Programming, Multimedia and DBMS courses.</div></div>
     </div>
@@ -361,15 +376,38 @@
         <p class="pc-desc"><strong>Models:</strong> Isolation Forest, One-Class SVM, LOF, DBSCAN, GMM, Autoencoders. Custom evaluation metrics: Detection@k and FAR@k.</p>
         <div class="pc-stack"><span class="st-tag">Python</span><span class="st-tag">Scikit-learn</span><span class="st-tag">Time-Series</span><span class="st-tag">Anomaly Detection</span><span class="st-tag">GCAA Collaboration</span></div>
       </div>
-      <div class="pv"><canvas id="fdrCanvas" width="380" height="200"></canvas></div>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div class="pv"><canvas id="fdrCanvas" width="380" height="160"></canvas></div>
+        <!-- VIDEO DEMO — swap the src to your actual video file or YouTube embed -->
+        <div class="vid-wrap">
+          <!-- Option A: local video file uploaded to your repo -->
+          <video controls preload="none" poster="images/fdr-thumb.jpg">
+            <source src="files/fdr-demo.mp4" type="video/mp4">
+            Your browser does not support video.
+          </video>
+          <!-- Option B: YouTube embed — comment out the <video> above and uncomment this:
+          <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" allowfullscreen></iframe>
+          -->
+          <div class="vid-label">FDR Anomaly Detection — Project Demo</div>
+        </div>
+      </div>
     </div>
 
     <!-- RPA -->
     <div class="pc fu">
       <div class="pc-tag">⚙ RPA &amp; Automation</div>
-      <div class="pc-title">CORISA Fuel Optimization Web App</div>
+      <div class="pc-title">CORSIA Fuel Optimization Web App</div>
       <p class="pc-desc">Built a web application to automate fuel-related workflows for an aviation project in collaboration with Etihad Airways and GCAA. The system streamlines CORISA fuel data processing, reducing manual effort through automated pipelines and a purpose-built front-end interface.</p>
-      <div class="pc-stack"><span class="st-tag">RPA</span><span class="st-tag">Web App</span><span class="st-tag">Automation</span><span class="st-tag">Aviation Ops</span><span class="st-tag">Etihad × GCAA</span></div>
+      <div class="pc-stack"><span class="st-tag">RPA</span><span class="st-tag">Web App</span><span class="st-tag">Automation</span><span class="st-tag">Aviation Ops</span><span class="st-tag"></span></div>
+      <!-- Add your screenshots to images/corisa/ and PDF to files/ -->
+      <div class="corisa-media">
+        <div class="corisa-imgs">
+          <img class="corisa-img" src="images/corsia/screen1.jpg" alt="CORSIA Screenshot 1" onclick="openLightbox(this.src)" onerror="this.style.display='none'">
+          <img class="corisa-img" src="images/corsia/screen2.jpg" alt="CORSIA Screenshot 2" onclick="openLightbox(this.src)" onerror="this.style.display='none'">
+          <img class="corisa-img" src="images/corsia/screen3.jpg" alt="CORSIA Screenshot 3" onclick="openLightbox(this.src)" onerror="this.style.display='none'">
+        </div>
+        <a href="files/corsia-manual.pdf" target="_blank" class="corisa-pdf">📄 View System Manual PDF ↗</a>
+      </div>
     </div>
 
     <!-- Forex -->
@@ -418,8 +456,6 @@
     <a class="pub-item" href="https://ieeexplore.ieee.org/abstract/document/11412007/" target="_blank"><div class="pub-year">2025</div><div><div class="pub-title">Pixel-Level Segmentation and Quantification of Industrial Cracks with Deep Learning</div><div class="pub-journal">Conference · 2025</div></div><div class="pub-badge i">IEEE</div></a>
     <a class="pub-item" href="https://ieeexplore.ieee.org/abstract/document/11428658/" target="_blank"><div class="pub-year">2025</div><div><div class="pub-title">A Software-Defined Radio Based Prototype for Aircraft Blackbox Detection in Simulated Environments</div><div class="pub-journal">Conference · 2025</div></div><div class="pub-badge i">IEEE</div></a>
   </div>
-  </div>
-  </div>
   <div style="margin-top:22px;text-align:right">
     <a href="https://scholar.google.com/citations?user=pImWe6kAAAAJ&hl=en" target="_blank" class="btn-outline" style="font-size:11px">View on Google Scholar →</a>
   </div>
@@ -441,23 +477,25 @@
     </div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
       <div style="background:var(--surface2);border:1px solid rgba(255,77,109,0.2);padding:24px;text-align:center">
-        <div style="font-family:'Syne',sans-serif;font-size:36px;font-weight:800;color:var(--accent2)">4+</div>
+        <div style="font-family:'Outfit',sans-serif;font-size:36px;font-weight:800;color:var(--accent2)">4+</div>
         <div style="font-size:10px;color:var(--muted);letter-spacing:0.2em;text-transform:uppercase;margin-top:5px">Orgs Designed For</div>
       </div>
       <div style="background:var(--surface2);border:1px solid rgba(255,77,109,0.2);padding:24px;text-align:center">
-        <div style="font-family:'Syne',sans-serif;font-size:36px;font-weight:800;color:var(--accent2)">10+</div>
+        <div style="font-family:'Outfit',sans-serif;font-size:36px;font-weight:800;color:var(--accent2)">10+</div>
         <div style="font-size:10px;color:var(--muted);letter-spacing:0.2em;text-transform:uppercase;margin-top:5px">Adobe Tools</div>
       </div>
       <div style="background:var(--surface2);border:1px solid rgba(255,77,109,0.2);padding:24px;text-align:center;grid-column:span 2">
-        <div style="font-family:'Syne',sans-serif;font-size:18px;font-weight:700;color:var(--accent2)">Brochures · Posters · Campaigns · Motion · Presentations</div>
+        <div style="font-family:'Outfit',sans-serif;font-size:18px;font-weight:700;color:var(--accent2)">Brochures · Posters · Campaigns · Motion</div>
         <div style="font-size:10px;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase;margin-top:6px">Types of work</div>
       </div>
     </div>
   </div>
 
+  <!-- Gallery — replace src values with your real image paths once uploaded -->
   <div class="dg fu">
     <div class="di tall" onclick="openLightbox('images/design/brochure-acoe.jpg')">
       <div class="dc">
+        <!-- Replace with: <img src="images/design/brochure-acoe.jpg" alt="ACoE Brochure"> -->
         <svg class="dc-placeholder" viewBox="0 0 220 290" xmlns="http://www.w3.org/2000/svg"><rect width="220" height="290" fill="#0d0f1a"/><rect x="0" y="0" width="220" height="82" fill="#060810"/><rect x="0" y="80" width="220" height="2" fill="#00e5c4" opacity="0.8"/><circle cx="32" cy="41" r="22" fill="none" stroke="#00e5c4" stroke-width="1" opacity="0.6"/><path d="M58 38 L76 34 L81 37 L71 41 L81 45 L76 48 Z" fill="#00e5c4" opacity="0.9"/><text x="58" y="58" font-size="7.5" fill="#eceeff" font-family="sans-serif" font-weight="bold">AVIATION CENTER</text><text x="58" y="68" font-size="5.5" fill="#6b6e88" font-family="monospace" letter-spacing="2">OF EXCELLENCE</text><rect x="16" y="98" width="120" height="4" rx="2" fill="#1c1f32"/><rect x="16" y="108" width="90" height="3" rx="2" fill="#1c1f32"/><rect x="16" y="117" width="110" height="3" rx="2" fill="#1c1f32"/><rect x="16" y="136" width="188" height="72" fill="#141728" rx="2"/><line x1="72" y1="136" x2="72" y2="208" stroke="#1c1f32" stroke-width="0.5"/><line x1="128" y1="136" x2="128" y2="208" stroke="#1c1f32" stroke-width="0.5"/><rect x="16" y="218" width="57" height="36" fill="#141728" rx="1"/><rect x="82" y="218" width="57" height="36" fill="#141728" rx="1"/><rect x="147" y="218" width="57" height="36" fill="#141728" rx="1"/><text x="28" y="234" font-size="12" fill="#00e5c4" font-family="monospace" font-weight="bold">19</text><text x="20" y="246" font-size="5" fill="#6b6e88" font-family="monospace">Research</text><text x="93" y="234" font-size="10" fill="#ff4d6d" font-family="monospace" font-weight="bold">843+</text><text x="86" y="246" font-size="5" fill="#6b6e88" font-family="monospace">Citations</text><text x="163" y="234" font-size="12" fill="#6c63ff" font-family="monospace" font-weight="bold">9</text><text x="153" y="246" font-size="5" fill="#6b6e88" font-family="monospace">H-Index</text><text x="16" y="285" font-size="5.5" fill="#00e5c4" font-family="monospace">aviation@sharjah.ac.ae</text></svg>
       </div>
       <div class="dl"><span class="dln">Research Brochure</span><span class="dlt">Print · Aviation</span></div>
@@ -474,7 +512,7 @@
       </div>
       <div class="dl"><span class="dln">Awareness Campaign</span><span class="dlt">Visual · Dubai Police</span></div>
     </div>
-    <div class="di wide" onclick="openLightbox('images/design/bulletin board-Recovered.png')">
+    <div class="di wide" onclick="openLightbox('images/design/poster-academic.jpg')">
       <div class="dc">
         <svg class="dc-placeholder" viewBox="0 0 440 165" xmlns="http://www.w3.org/2000/svg"><rect width="440" height="165" fill="#0d0f1a"/><rect x="0" y="0" width="440" height="36" fill="#060810"/><rect x="0" y="34" width="440" height="2" fill="#ff4d6d" opacity="0.8"/><polygon points="24,8 36,8 42,18 36,28 24,28 18,18" fill="none" stroke="#eceeff" stroke-width="1" opacity="0.7"/><text x="50" y="17" font-size="7" fill="#eceeff" font-family="monospace" font-weight="bold">UNIVERSITY OF SHARJAH</text><text x="50" y="28" font-size="5.5" fill="#6b6e88" font-family="monospace">College of Computing &amp; Informatics</text><text x="350" y="16" font-size="6" fill="#ff4d6d" font-family="monospace" text-anchor="middle">RESEARCH POSTER</text><text x="155" y="54" font-size="7" fill="#ff4d6d" font-family="monospace" font-weight="bold">RESULTS</text><rect x="155" y="100" width="16" height="55" fill="rgba(0,229,196,0.25)"/><rect x="155" y="80" width="16" height="75" fill="rgba(0,229,196,0.45)"/><rect x="178" y="90" width="16" height="65" fill="rgba(108,99,255,0.35)"/><rect x="178" y="70" width="16" height="85" fill="rgba(108,99,255,0.55)"/><rect x="201" y="95" width="16" height="60" fill="rgba(255,77,109,0.3)"/><rect x="201" y="75" width="16" height="80" fill="rgba(255,77,109,0.5)"/><text x="272" y="113" font-size="6.5" fill="#eceeff" font-family="monospace">Fatima Dakalbab</text><text x="272" y="124" font-size="5.5" fill="#6b6e88" font-family="monospace">Research Assistant · ACoE · UOS</text></svg>
       </div>
@@ -486,7 +524,7 @@
       </div>
       <div class="dl"><span class="dln">Event Graphic</span><span class="dlt">Digital · GCAA 2026</span></div>
     </div>
-    <div class="di" onclick="openLightbox('images/design/Rollup.png')">
+    <div class="di" onclick="openLightbox('images/design/rollup.jpg')">
       <div class="dc">
         <svg class="dc-placeholder" viewBox="0 0 220 165" xmlns="http://www.w3.org/2000/svg"><rect width="220" height="165" fill="#0d0f1a"/><defs><pattern id="dp2" x="0" y="0" width="18" height="18" patternUnits="userSpaceOnUse"><line x1="0" y1="18" x2="18" y2="0" stroke="#1c1f32" stroke-width="1"/></pattern></defs><rect x="0" y="0" width="72" height="165" fill="url(#dp2)"/><rect x="70" y="0" width="3" height="165" fill="#00e5c4" opacity="0.65"/><text x="86" y="86" font-size="10" fill="#eceeff" font-family="sans-serif" font-weight="bold">Aviation</text><text x="86" y="100" font-size="10" fill="#eceeff" font-family="sans-serif" font-weight="bold">Center of</text><text x="86" y="114" font-size="10" fill="#00e5c4" font-family="sans-serif" font-weight="bold">Excellence</text></svg>
       </div>
@@ -494,7 +532,7 @@
     </div>
   </div>
 
-  <p style="margin-top:20px;font-size:12px;color:var(--muted);font-weight:300">💡 Click any item to view full size.</p>
+  <p style="margin-top:20px;font-size:12px;color:var(--muted);font-weight:300">💡 Click any item to view full size. Replace SVG placeholders with your real images — see the readme for instructions.</p>
 </div></div>
 
 <!-- ═══════════ SKILLS ═══════════ -->
@@ -587,9 +625,8 @@
       <!-- Add your real photos: <img src="images/talks/talk1.jpg" alt="..."> inside each .slide -->
       <div class="slide">
         <div class="slide-placeholder">
-          <img src="images/talks/GCAA AI Open Data Ceremony.jpg" alt="...">
-          <!-- <div style="font-size:40px">🎤</div>
-          <div>Add your event photos to <code style="color:var(--accent)">images/talks/</code></div> -->
+          <div style="font-size:40px">🎤</div>
+          <div>Add your event photos to <code style="color:var(--accent)">images/talks/</code></div>
         </div>
         <div class="slide-caption"><strong>GCAA AI Open Data Ceremony</strong> · Abu Dhabi, April 2026 — Presenting aviation AI research to GCAA Director General</div>
       </div>
@@ -672,7 +709,7 @@ setTimeout(()=>{document.querySelectorAll('.ti').forEach((el,i)=>setTimeout(()=>
 // Since Scholar blocks direct fetches, we show the best available numbers
 // and link directly so visitors can see live stats themselves.
 // To keep numbers accurate, update the values below when you check your profile.
-const scholarData = { citations: 1844, hindex: 8, i10: 8 };
+const scholarData = { citations: 1845, hindex: 8, i10: 8 };
 function countUp(el,target,dur=1800){
   if(!el)return;
   let s=0;
@@ -696,6 +733,7 @@ if(ch){vals.forEach((v,i)=>{const b=document.createElement('div');b.className='b
 // ── FDR Canvas ──
 const cv=document.getElementById('fdrCanvas');
 if(cv){
+  cv.width=380;cv.height=160;
   const ctx=cv.getContext('2d'),W=cv.width,H=cv.height;let t=0;
   const lines=[{c:'#00e5c4',a:28,f:0.022,ph:0,b:0.42},{c:'#6c63ff',a:18,f:0.038,ph:1.2,b:0.6},{c:'#ff4d6d',a:12,f:0.056,ph:2.1,b:0.75}];
   function d(){
